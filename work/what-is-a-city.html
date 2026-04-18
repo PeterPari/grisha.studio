@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is a City? — Gregory Parizhsky</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #F5F7F5; --surface: #FFFFFF; --text: #1C271E; --muted: #6A7A6B;
+            --accent: #306e41; --border: #DDE5DD;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+            --mono: 'DM Mono', 'SF Mono', monospace;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--bg); color: var(--text); font-family: var(--sans);
+            font-weight: 300; line-height: 1.6; overflow-x: hidden;
+            animation: pageIn 450ms var(--ease) both;
+        }
+        @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+
+        #progress {
+            position: fixed; top: 0; left: 0; width: 100%; height: 1px;
+            background: var(--accent); transform: scaleX(0); transform-origin: left;
+            z-index: 200; transition: transform 80ms linear;
+        }
+
+        .ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+        .ambient::before {
+            content: ''; position: absolute; top: -15%; left: -5%;
+            width: 55%; height: 55%; border-radius: 50%;
+            background: radial-gradient(circle, rgba(50,69,55,0.07) 0%, transparent 68%);
+            animation: driftA 32s ease-in-out infinite alternate;
+        }
+        .ambient::after {
+            content: ''; position: absolute; bottom: -8%; right: -8%;
+            width: 45%; height: 45%; border-radius: 50%;
+            background: radial-gradient(circle, rgba(50,69,55,0.05) 0%, transparent 65%);
+            animation: driftB 26s ease-in-out infinite alternate;
+        }
+        @keyframes driftA { to { transform: translate(4%, 9%); } }
+        @keyframes driftB { to { transform: translate(-5%, -6%); } }
+
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 28px 56px; display: flex; align-items: center; justify-content: space-between;
+            transition: background 500ms ease, backdrop-filter 500ms ease, border-color 400ms ease;
+            border-bottom: 1px solid transparent;
+        }
+        #nav.scrolled {
+            background: rgba(245,247,245,0.88);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom-color: var(--border);
+        }
+        .nav-mark {
+            font-family: var(--mono); font-size: 12px; font-weight: 400;
+            letter-spacing: 0.16em; color: var(--accent); text-decoration: none;
+        }
+        .nav-list { list-style: none; display: flex; gap: 40px; }
+        .nav-list a {
+            font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--muted); text-decoration: none; transition: color 200ms;
+        }
+        .nav-list a:hover { color: var(--accent); }
+
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 750ms var(--ease) var(--d, 0ms), transform 750ms var(--ease) var(--d, 0ms);
+        }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+
+        footer {
+            position: relative; z-index: 1; padding: 28px 56px;
+            border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        footer span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--muted); }
+
+        .back-wrap { position: relative; z-index: 1; padding: 120px 56px 0; }
+        .back-link {
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 12px;
+            transition: color 200ms, gap 350ms var(--ease);
+        }
+        .back-link::before { content: '←'; font-size: 13px; line-height: 1; }
+        .back-link:hover { color: var(--accent); gap: 18px; }
+
+        .detail-header { position: relative; z-index: 1; padding: 36px 56px 64px; }
+        .detail-meta-row {
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted); display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+        }
+        .detail-meta-row .num { color: var(--accent); }
+        .detail-h1 {
+            font-family: var(--serif); font-size: clamp(44px, 7vw, 104px);
+            font-weight: 400; letter-spacing: -0.035em; line-height: 0.92; color: var(--text);
+        }
+        .detail-material {
+            font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+            color: var(--muted); margin-top: 22px; display: block; line-height: 1.7;
+        }
+
+        .detail-lead {
+            position: relative; z-index: 1; padding: 0 56px;
+            display: grid; justify-items: center;
+        }
+        .detail-lead.rail-narrow { --lead-max: 920px; }
+        .detail-lead.rail-medium { --lead-max: 1120px; }
+        .detail-lead.rail-wide { --lead-max: 1320px; }
+        .detail-lead img {
+            width: 100%; max-width: var(--lead-max, 1220px); height: auto; display: block;
+            filter: saturate(0.15) sepia(0.22) brightness(1.05);
+        }
+
+        .detail-body {
+            position: relative; z-index: 1; padding: 88px 56px; border-top: 1px solid var(--border);
+            display: grid; grid-template-columns: 220px 1fr; gap: 80px; align-items: start;
+        }
+        .body-label {
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; color: var(--accent);
+            text-transform: uppercase; position: sticky; top: 120px; line-height: 1.9;
+        }
+        .body-label .sub { color: var(--muted); display: block; margin-top: 6px; font-size: 9px; }
+        .statement .opener {
+            font-family: var(--serif); font-style: italic; font-size: 20px;
+            line-height: 1.72; color: var(--text); display: block; margin-bottom: 30px;
+        }
+        .statement p { font-size: 15.5px; font-weight: 300; line-height: 1.88; color: var(--text); }
+        .statement p + p { margin-top: 22px; }
+        .statement em { font-style: italic; }
+
+        .detail-gallery { position: relative; z-index: 1; padding: 0 56px 128px; }
+        .gallery-header {
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--muted); padding: 26px 0; margin-bottom: 44px;
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between;
+        }
+        .gallery-count { color: var(--border); }
+        .gallery-grid { display: flex; flex-direction: column; gap: 16px; }
+        .gallery-row {
+            display: grid; gap: 16px; align-items: start;
+            width: 100%; max-width: var(--row-max, 1180px); margin: 0 auto;
+        }
+        .gallery-row.one   { grid-template-columns: 1fr; }
+        .gallery-row.two   { grid-template-columns: 1fr 1fr; }
+        .gallery-row.asym  { grid-template-columns: 2fr 1fr; }
+        .gallery-row.asym-r{ grid-template-columns: 1fr 2fr; }
+        .gallery-row.rail-narrow { --row-max: 920px; }
+        .gallery-row.rail-medium { --row-max: 1120px; }
+        .gallery-row.rail-wide { --row-max: 1320px; }
+        .g-img { overflow: hidden; background: var(--border); }
+        .g-img img {
+            width: 100%; height: auto; display: block;
+            filter: saturate(0.1) sepia(0.28) brightness(1.08);
+            transition: transform 900ms var(--ease), filter 600ms ease;
+        }
+        .g-img:hover img { transform: scale(1.04); filter: saturate(0.45) sepia(0.1) brightness(1.0); }
+        .ar-3-4 { aspect-ratio: auto; }
+        .ar-4-3 { aspect-ratio: auto; }
+        .ar-1-1 { aspect-ratio: auto; }
+        .ar-2-3 { aspect-ratio: auto; }
+
+        .work-nav {
+            position: relative; z-index: 1; padding: 48px 56px; border-top: 1px solid var(--border);
+            display: grid; grid-template-columns: 1fr 1fr;
+        }
+        .wnav-link { text-decoration: none; }
+        .wnav-dir {
+            font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted); display: block; margin-bottom: 9px;
+        }
+        .wnav-title {
+            font-family: var(--serif); font-size: 17px; font-weight: 400; letter-spacing: -0.01em;
+            color: var(--text); display: block; max-width: 360px; transition: color 200ms;
+        }
+        .wnav-link:hover .wnav-title { color: var(--accent); }
+        .wnav-link.right { text-align: right; justify-self: end; }
+        .wnav-link.right .wnav-title { margin-left: auto; }
+
+        @media (max-width: 960px) {
+            #nav { padding: 28px 28px; }
+            .back-wrap { padding: 100px 28px 0; }
+            .detail-header { padding: 24px 28px 40px; }
+            .detail-lead { padding: 0 28px; }
+            .detail-body { padding: 56px 28px; grid-template-columns: 1fr; gap: 32px; }
+            .body-label { position: static; }
+            .detail-gallery { padding: 0 28px 88px; }
+            .gallery-row.two, .gallery-row.asym, .gallery-row.asym-r { grid-template-columns: 1fr; }
+            .work-nav { padding: 40px 28px; }
+        }
+        @media (max-width: 600px) {
+            .detail-h1 { font-size: clamp(36px, 11vw, 56px); }
+            .work-nav { grid-template-columns: 1fr; gap: 36px; }
+            .wnav-link.right { text-align: left; justify-self: start; }
+            .wnav-link.right .wnav-title { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress"></div>
+    <div class="ambient"></div>
+
+    <nav id="nav">
+        <a href="../index.html" class="nav-mark">G · P</a>
+        <ul class="nav-list">
+            <li><a href="../index.html#work">Work</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="back-wrap">
+        <a href="../index.html#work" class="back-link">Work</a>
+    </div>
+
+    <header class="detail-header reveal">
+        <div class="detail-meta-row">
+            <span class="num">05</span>
+            <span>—</span>
+            <span>Architecture</span>
+            <span>·</span>
+            <span>2024</span>
+        </div>
+        <h1 class="detail-h1">What Is a City?</h1>
+        <span class="detail-material">Wood &nbsp;·&nbsp; 4&#x2032; &times; 3&#x2032; &times; Dimensions Variable</span>
+    </header>
+
+    <figure class="detail-lead reveal rail-narrow" style="--d:80ms">
+        <img src="../assets/what-is-a-city/front-view.jpeg"
+             alt="Full installation — front view" loading="eager">
+    </figure>
+
+    <div class="detail-body">
+        <div class="body-label reveal">
+            Statement
+            <span class="sub">Gregory Parizhsky<br>2024</span>
+        </div>
+        <div class="statement reveal" style="--d:80ms">
+            <p>The word <em>Terrestrial</em> brought to mind an amalgamation of intersecting forces that act upon the city, the landscape, and human life. The work began with a grid: 48 wooden blocks. Each block was initially to have a design that abided by its given boundaries. However, through edge consideration, the piece begged for negative space and to overlap and cross boundaries. Searching for a way to describe the intricacies of terrestrial life, I varied the texture and material of the work.</p>
+            <p>The forms were both geometric and organic, to translate the relationship between the constructed and nature. Finding ways to vary a work constrained to a grid, I used proximity and similarity to group pieces, or spread them throughout the work. A pattern that I repeated was the wooden block city; it spread its roots throughout the work but did not dominate the visual space. By framing certain parts of the piece, I attempted to create a visual rhythm that would carry the viewer through the work's twists, undulations, and strict geometry. Natural forms seemed to take on a hierarchical scale, while the constructed elements were dwarfed, seemingly reaching upward — a commentary on the reaching arm of industrialization.</p>
+            <p>The carved wooden boards contributed to a pattern vibration throughout the piece. The piece becomes digestible when looking at the repeated elements and those that were only made once. The repetition gives a sense of tranquility.</p>
+        </div>
+    </div>
+
+    <section class="detail-gallery">
+        <div class="gallery-header reveal">
+            <span>Views</span>
+            <span class="gallery-count">03</span>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-row one reveal rail-narrow" style="--d:60ms">
+                <div class="g-img ar-2-3">
+                    <img src="../assets/what-is-a-city/close-up-looking-up.jpeg"
+                         alt="Looking up — urban canyon perspective" loading="lazy">
+                </div>
+            </div>
+            <div class="gallery-row two reveal rail-medium" style="--d:120ms">
+                <div class="g-img ar-4-3">
+                    <img src="../assets/what-is-a-city/side-view.jpeg"
+                         alt="Side view — grid rhythm" loading="lazy">
+                </div>
+                <div class="g-img ar-3-4">
+                    <img src="../assets/what-is-a-city/close-up-bottom-left.jpeg"
+                         alt="Detail — bottom-left corner" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="work-nav">
+        <a href="./a-mycelium-mind.html" class="wnav-link">
+            <span class="wnav-dir">← Previous</span>
+            <span class="wnav-title">A Mycelium Mind</span>
+        </a>
+        <a href="./weathered-huts-of-the-soul.html" class="wnav-link right">
+            <span class="wnav-dir">Next →</span>
+            <span class="wnav-title">The Weathered Huts of the Soul</span>
+        </a>
+    </nav>
+
+    <footer>
+        <span>Gregory &quot;Grisha&quot; Parizhsky</span>
+        <span>&copy; 2026</span>
+    </footer>
+
+    <script>
+        const prog = document.getElementById('progress');
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            prog.style.transform = `scaleX(${pct})`;
+            nav.classList.toggle('scrolled', window.scrollY > 48);
+        }, { passive: true });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+        }, { threshold: 0.07, rootMargin: '0px 0px -52px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
