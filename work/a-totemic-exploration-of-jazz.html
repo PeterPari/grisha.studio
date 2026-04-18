@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/work-lightbox.css">
+    <script src="../assets/work-lightbox.js" defer></script>
 
     <style>
         :root {
@@ -117,9 +119,50 @@
         .detail-lead.rail-narrow { --lead-max: 920px; }
         .detail-lead.rail-medium { --lead-max: 1120px; }
         .detail-lead.rail-wide { --lead-max: 1320px; }
+        .image-zoom-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            cursor: zoom-in;
+        }
+        .detail-lead .image-zoom-link { max-width: var(--lead-max, 1220px); }
+        .image-zoom-link::after {
+            content: 'Zoom image';
+            position: absolute;
+            right: 18px;
+            bottom: 18px;
+            padding: 8px 10px;
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #F5F7F5;
+            background: rgba(12, 13, 13, 0.72);
+            border: 1px solid rgba(244, 242, 235, 0.18);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 220ms ease, transform 220ms ease;
+            pointer-events: none;
+        }
+        .image-zoom-link:hover::after,
+        .image-zoom-link:focus-visible::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .image-zoom-link:focus-visible {
+            outline: none;
+            box-shadow: inset 0 0 0 1px var(--accent);
+        }
         .detail-lead img {
-            width: 100%; max-width: var(--lead-max, 1220px); height: auto; display: block;
+            width: 100%; max-width: none; height: auto; display: block;
             filter: saturate(0.15) sepia(0.22) brightness(1.05);
+            transition: transform 900ms var(--ease), filter 600ms ease;
+        }
+        .detail-lead .image-zoom-link:hover img,
+        .detail-lead .image-zoom-link:focus-visible img {
+            transform: scale(1.015);
+            filter: saturate(0.22) sepia(0.16) brightness(1.03);
         }
 
         .detail-body {
@@ -208,6 +251,12 @@
             .work-nav { grid-template-columns: 1fr; gap: 36px; }
             .wnav-link.right { text-align: left; justify-self: start; }
             .wnav-link.right .wnav-title { margin-left: 0; }
+            .image-zoom-link::after {
+                right: 12px;
+                bottom: 12px;
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -242,8 +291,10 @@
     </header>
 
     <figure class="detail-lead reveal rail-medium" style="--d:80ms">
-        <img src="../assets/a-totemic-exploration-of-jazz/front-view.jpg"
-             alt="Full sculpture — front view" loading="eager">
+        <a class="image-zoom-link" href="../assets/a-totemic-exploration-of-jazz/front-view-web.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/a-totemic-exploration-of-jazz/front-view-web.jpg"
+                 alt="Full sculpture — front view" width="3200" height="2134" loading="eager" decoding="async" fetchpriority="high">
+        </a>
     </figure>
 
     <div class="detail-body">
@@ -267,12 +318,16 @@
         <div class="gallery-grid">
             <div class="gallery-row asym-r reveal rail-medium" style="--d:60ms">
                 <div class="g-img ar-3-4">
-                    <img src="../assets/a-totemic-exploration-of-jazz/close-up.jpg"
-                         alt="Detail — ceramic surface and perforations" loading="lazy">
+                    <a class="image-zoom-link" href="../assets/a-totemic-exploration-of-jazz/close-up-web.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/a-totemic-exploration-of-jazz/close-up-web.jpg"
+                             alt="Detail — ceramic surface and perforations" width="3200" height="2134" loading="lazy" decoding="async">
+                    </a>
                 </div>
                 <div class="g-img ar-3-4">
-                    <img src="../assets/a-totemic-exploration-of-jazz/side-view.jpg"
-                         alt="Side view — tonal hierarchy" loading="lazy">
+                    <a class="image-zoom-link" href="../assets/a-totemic-exploration-of-jazz/side-view-web.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/a-totemic-exploration-of-jazz/side-view-web.jpg"
+                             alt="Side view — tonal hierarchy" width="3200" height="2132" loading="lazy" decoding="async">
+                    </a>
                 </div>
             </div>
         </div>
