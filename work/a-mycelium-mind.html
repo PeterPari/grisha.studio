@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site-loader.css">
     <link rel="stylesheet" href="../assets/work-lightbox.css">
+    <script src="../assets/site-loader.js" defer></script>
     <script src="../assets/work-lightbox.js" defer></script>
 
     <style>
@@ -28,6 +30,11 @@
             animation: pageIn 450ms var(--ease) both;
         }
         @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes trackDrop {
+            0%   { top: -50%; }
+            100% { top: 110%; }
+        }
         img { display: block; max-width: 100%; }
         a { color: inherit; }
 
@@ -97,7 +104,7 @@
         .back-link::before { content: '←'; font-size: 13px; line-height: 1; }
         .back-link:hover { color: var(--accent); gap: 18px; }
 
-        .detail-header { position: relative; z-index: 1; padding: 36px 56px 64px; }
+        .detail-header { position: relative; z-index: 1; padding: 36px 136px 64px 56px; }
         .detail-meta-row {
             font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
             color: var(--muted); display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
@@ -110,6 +117,45 @@
         .detail-material {
             font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
             color: var(--muted); margin-top: 22px; display: block; line-height: 1.7;
+        }
+        .detail-cue {
+            position: absolute;
+            top: 50%;
+            right: 56px;
+            transform: translateY(-50%);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeIn 700ms 1700ms var(--ease) forwards;
+            pointer-events: none;
+        }
+        .cue-track {
+            width: 1px;
+            height: 68px;
+            background: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        .cue-track::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: var(--accent);
+            animation: trackDrop 2s 1.8s ease-in-out infinite;
+        }
+        .cue-label {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            writing-mode: vertical-lr;
         }
 
         .detail-lead {
@@ -127,42 +173,17 @@
             cursor: zoom-in;
         }
         .detail-lead .image-zoom-link { max-width: var(--lead-max, 1220px); }
-        .image-zoom-link::after {
-            content: 'Zoom image';
-            position: absolute;
-            right: 18px;
-            bottom: 18px;
-            padding: 8px 10px;
-            font-family: var(--mono);
-            font-size: 9px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #F5F7F5;
-            background: rgba(12, 13, 13, 0.72);
-            border: 1px solid rgba(244, 242, 235, 0.18);
-            opacity: 0;
-            transform: translateY(8px);
-            transition: opacity 220ms ease, transform 220ms ease;
-            pointer-events: none;
-        }
-        .image-zoom-link:hover::after,
-        .image-zoom-link:focus-visible::after {
-            opacity: 1;
-            transform: translateY(0);
-        }
         .image-zoom-link:focus-visible {
             outline: none;
             box-shadow: inset 0 0 0 1px var(--accent);
         }
         .detail-lead img {
             width: 100%; max-width: none; height: auto; display: block;
-            filter: saturate(0.15) sepia(0.22) brightness(1.05);
-            transition: transform 900ms var(--ease), filter 600ms ease;
+            transition: transform 900ms var(--ease);
         }
         .detail-lead .image-zoom-link:hover img,
         .detail-lead .image-zoom-link:focus-visible img {
             transform: scale(1.015);
-            filter: saturate(0.22) sepia(0.16) brightness(1.03);
         }
 
         .detail-body {
@@ -205,10 +226,9 @@
         .g-img { overflow: hidden; background: var(--border); }
         .g-img img {
             width: 100%; height: auto; display: block;
-            filter: saturate(0.1) sepia(0.28) brightness(1.08);
-            transition: transform 900ms var(--ease), filter 600ms ease;
+            transition: transform 900ms var(--ease);
         }
-        .g-img:hover img { transform: scale(1.04); filter: saturate(0.45) sepia(0.1) brightness(1.0); }
+        .g-img:hover img { transform: scale(1.04); }
         .ar-3-4 { aspect-ratio: auto; }
         .ar-4-3 { aspect-ratio: auto; }
         .ar-1-1 { aspect-ratio: auto; }
@@ -235,6 +255,7 @@
             #nav { padding: 28px 28px; }
             .back-wrap { padding: 100px 28px 0; }
             .detail-header { padding: 24px 28px 40px; }
+            .detail-cue { display: none; }
             .detail-lead { padding: 0 28px; }
             .detail-body { padding: 56px 28px; grid-template-columns: 1fr; gap: 32px; }
             .body-label { position: static; }
@@ -247,16 +268,11 @@
             .work-nav { grid-template-columns: 1fr; gap: 36px; }
             .wnav-link.right { text-align: left; justify-self: start; }
             .wnav-link.right .wnav-title { margin-left: 0; }
-            .image-zoom-link::after {
-                right: 12px;
-                bottom: 12px;
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 <body>
+    <div id="loader" class="site-loader" aria-hidden="true"><p class="loader-mark">G · P</p></div>
 
     <div id="progress"></div>
     <div class="ambient"></div>
@@ -264,14 +280,15 @@
     <nav id="nav">
         <a href="../index.html" class="nav-mark">G · P</a>
         <ul class="nav-list">
-            <li><a href="../index.html#work">Work</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../gallery/ceramic.html">Galleries</a></li>
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../index.html#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="back-wrap">
-        <a href="../index.html#work" class="back-link">Work</a>
+        <a href="../gallery/ceramic.html" class="back-link">Ceramic</a>
     </div>
 
     <header class="detail-header reveal">
@@ -284,6 +301,10 @@
         </div>
         <h1 class="detail-h1">A Mycelium Mind</h1>
         <span class="detail-material">Ceramic &nbsp;·&nbsp; 4&#x2032; &times; 3&#x2032; &times; Dimensions Variable</span>
+        <div class="detail-cue" aria-hidden="true">
+            <div class="cue-track"></div>
+            <span class="cue-label">Scroll</span>
+        </div>
     </header>
 
     <figure class="detail-lead reveal rail-narrow" style="--d:80ms">
@@ -341,14 +362,14 @@
             <span class="wnav-dir">← Previous</span>
             <span class="wnav-title">A Totemic Exploration of Jazz</span>
         </a>
-        <a href="./what-is-a-city.html" class="wnav-link right">
+        <a href="./icarus.html" class="wnav-link right">
             <span class="wnav-dir">Next →</span>
-            <span class="wnav-title">What Is a City?</span>
+            <span class="wnav-title">Icarus</span>
         </a>
     </nav>
 
     <footer>
-        <span>Gregory &quot;Grisha&quot; Parizhsky</span>
+        <span>Gregory Parizhsky</span>
         <span>&copy; 2026</span>
     </footer>
 

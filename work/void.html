@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Weathered Huts of the Soul — Gregory Parizhsky</title>
+    <title>Void — Gregory Parizhsky</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,8 @@
 
     <style>
         :root {
-            --bg: #F5F7F5;
-            --surface: #FFFFFF;
-            --text: #1C271E;
-            --muted: #6A7A6B;
-            --accent: #306e41;
-            --border: #DDE5DD;
+            --bg: #F5F7F5; --surface: #FFFFFF; --text: #1C271E; --muted: #6A7A6B;
+            --accent: #306e41; --border: #DDE5DD;
             --serif: 'Instrument Serif', Georgia, serif;
             --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
             --mono: 'DM Mono', 'SF Mono', monospace;
@@ -29,9 +25,8 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
-            background: var(--bg); color: var(--text);
-            font-family: var(--sans); font-weight: 300;
-            line-height: 1.6; overflow-x: hidden;
+            background: var(--bg); color: var(--text); font-family: var(--sans);
+            font-weight: 300; line-height: 1.6; overflow-x: hidden;
             animation: pageIn 450ms var(--ease) both;
         }
         @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
@@ -82,9 +77,8 @@
         }
         .nav-list { list-style: none; display: flex; gap: 40px; }
         .nav-list a {
-            font-size: 11px; font-weight: 400; letter-spacing: 0.1em;
-            text-transform: uppercase; color: var(--muted);
-            text-decoration: none; transition: color 200ms;
+            font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--muted); text-decoration: none; transition: color 200ms;
         }
         .nav-list a:hover { color: var(--accent); }
 
@@ -99,18 +93,12 @@
             border-top: 1px solid var(--border);
             display: flex; justify-content: space-between; align-items: center;
         }
-        footer span {
-            font-family: var(--mono); font-size: 10px;
-            letter-spacing: 0.12em; color: var(--muted);
-        }
-
-        /* ── DETAIL ── */
+        footer span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--muted); }
 
         .back-wrap { position: relative; z-index: 1; padding: 120px 56px 0; }
         .back-link {
-            font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--muted); text-decoration: none;
-            display: inline-flex; align-items: center; gap: 12px;
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 12px;
             transition: color 200ms, gap 350ms var(--ease);
         }
         .back-link::before { content: '←'; font-size: 13px; line-height: 1; }
@@ -118,9 +106,8 @@
 
         .detail-header { position: relative; z-index: 1; padding: 36px 136px 64px 56px; }
         .detail-meta-row {
-            font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--muted);
-            display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted); display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
         }
         .detail-meta-row .num { color: var(--accent); }
         .detail-h1 {
@@ -199,44 +186,10 @@
             transform: scale(1.015);
         }
 
-        .detail-body {
-            position: relative; z-index: 1; padding: 88px 56px;
-            border-top: 1px solid var(--border);
-            display: grid; grid-template-columns: 220px 1fr;
-            gap: 80px; align-items: start;
-        }
-        .body-label {
-            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
-            color: var(--accent); text-transform: uppercase;
-            position: sticky; top: 120px; line-height: 1.9;
-        }
-        .body-label .sub { color: var(--muted); display: block; margin-top: 6px; font-size: 9px; }
-
-        .statement blockquote {
-            font-family: var(--serif); font-style: italic; font-size: 17px; line-height: 1.88;
-            color: var(--text); border-left: 2px solid var(--accent);
-            padding-left: 26px; margin: 0 0 36px;
-        }
-        .statement blockquote cite {
-            font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em;
-            text-transform: uppercase; color: var(--muted); font-style: normal;
-            display: block; margin-top: 14px;
-        }
-        .statement .opener {
-            font-family: var(--serif); font-style: italic; font-size: 20px;
-            line-height: 1.72; color: var(--text); display: block; margin-bottom: 30px;
-        }
-        .statement p {
-            font-size: 15.5px; font-weight: 300; line-height: 1.88; color: var(--text);
-        }
-        .statement p + p { margin-top: 22px; }
-        .statement em { font-style: italic; }
-
-        .detail-gallery { position: relative; z-index: 1; padding: 0 56px 128px; }
+        .detail-gallery { position: relative; z-index: 1; padding: 88px 56px 128px; }
         .gallery-header {
-            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
-            text-transform: uppercase; color: var(--muted);
-            padding: 26px 0; margin-bottom: 44px;
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--muted); padding: 26px 0; margin-bottom: 44px;
             border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
             display: flex; justify-content: space-between;
         }
@@ -253,32 +206,29 @@
         .gallery-row.rail-narrow { --row-max: 920px; }
         .gallery-row.rail-medium { --row-max: 1120px; }
         .gallery-row.rail-wide { --row-max: 1320px; }
-
         .g-img { overflow: hidden; background: var(--border); }
         .g-img img {
             width: 100%; height: auto; display: block;
             transition: transform 900ms var(--ease);
         }
         .g-img:hover img { transform: scale(1.04); }
-        .ar-3-4  { aspect-ratio: auto; }
-        .ar-4-3  { aspect-ratio: auto; }
-        .ar-1-1  { aspect-ratio: auto; }
-        .ar-2-3  { aspect-ratio: auto; }
+        .ar-3-4 { aspect-ratio: auto; }
+        .ar-4-3 { aspect-ratio: auto; }
+        .ar-1-1 { aspect-ratio: auto; }
+        .ar-2-3 { aspect-ratio: auto; }
 
         .work-nav {
-            position: relative; z-index: 1; padding: 48px 56px;
-            border-top: 1px solid var(--border);
+            position: relative; z-index: 1; padding: 48px 56px; border-top: 1px solid var(--border);
             display: grid; grid-template-columns: 1fr 1fr;
         }
         .wnav-link { text-decoration: none; }
         .wnav-dir {
-            font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 9px;
+            font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted); display: block; margin-bottom: 9px;
         }
         .wnav-title {
-            font-family: var(--serif); font-size: 17px; font-weight: 400;
-            letter-spacing: -0.01em; color: var(--text); display: block;
-            max-width: 360px; transition: color 200ms;
+            font-family: var(--serif); font-size: 17px; font-weight: 400; letter-spacing: -0.01em;
+            color: var(--text); display: block; max-width: 360px; transition: color 200ms;
         }
         .wnav-link:hover .wnav-title { color: var(--accent); }
         .wnav-link.right { text-align: right; justify-self: end; }
@@ -290,9 +240,7 @@
             .detail-header { padding: 24px 28px 40px; }
             .detail-cue { display: none; }
             .detail-lead { padding: 0 28px; }
-            .detail-body { padding: 56px 28px; grid-template-columns: 1fr; gap: 32px; }
-            .body-label { position: static; }
-            .detail-gallery { padding: 0 28px 88px; }
+            .detail-gallery { padding: 56px 28px 88px; }
             .gallery-row.two, .gallery-row.asym, .gallery-row.asym-r { grid-template-columns: 1fr; }
             .work-nav { padding: 40px 28px; }
         }
@@ -321,46 +269,29 @@
     </nav>
 
     <div class="back-wrap">
-        <a href="../gallery/wood.html" class="back-link">Wood</a>
+        <a href="../gallery/ceramic.html" class="back-link">Ceramic</a>
     </div>
 
     <header class="detail-header reveal">
         <div class="detail-meta-row">
-            <span class="num">01</span>
+            <span class="num">07</span>
             <span>—</span>
             <span>Art</span>
-            <span>·</span>
-            <span>2024</span>
         </div>
-        <h1 class="detail-h1">The Weathered Huts<br>of the Soul</h1>
-        <span class="detail-material">Concrete &nbsp;·&nbsp; Burnt Wood</span>
+        <h1 class="detail-h1">Void</h1>
+        <span class="detail-material">Ceramic &nbsp;·&nbsp; 14.5&quot; &times; 12&quot; &times; 11&quot;</span>
         <div class="detail-cue" aria-hidden="true">
             <div class="cue-track"></div>
             <span class="cue-label">Scroll</span>
         </div>
     </header>
 
-    <figure class="detail-lead reveal rail-wide" style="--d:80ms">
-        <a class="image-zoom-link" href="../assets/weathered-huts-of-the-soul/both-towers-web.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/weathered-huts-of-the-soul/both-towers-web.jpg"
-                 alt="Both towers — full installation" width="3200" height="2298" loading="eager" decoding="async" fetchpriority="high">
+    <figure class="detail-lead reveal rail-medium" style="--d:80ms">
+        <a class="image-zoom-link" href="../assets/void/front-view-web.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/void/front-view-web.jpg"
+                 alt="Void — front view" width="2400" height="1800" loading="eager" decoding="async" fetchpriority="high">
         </a>
     </figure>
-
-    <div class="detail-body">
-        <div class="body-label reveal">
-            Statement
-            <span class="sub">Gregory Parizhsky<br>2024</span>
-        </div>
-        <div class="statement reveal" style="--d:80ms">
-            <blockquote>
-                "Amongst those who go to sea there are the navigators who discover new worlds, adding continents to the earth and stars to the heavens: they are the masters, the great, the eternally splendid. Then there are those who spit terror from their gun-ports, who pillage, who grow rich and fat. Others go off in search of gold and silk under foreign skies. Still others catch salmon for the gourmet or cod for the poor. I am the obscure pearl-fisherman who dives into the deepest waters and comes up with empty hands and a blue face. Some fatal attraction draws me down into the abysses of thought, down into those innermost recesses which never cease to fascinate the strong. I shall spend my life gazing at the ocean of art, where others voyage or fight; and from time to time I'll entertain myself by diving for those green and yellow shells that nobody will want. So I shall keep them for myself and cover the walls of my hut with them."
-                <cite>Flaubert's Parrot, Julian Barnes, p. 33</cite>
-            </blockquote>
-            <p>This piece represents the search for the shells to line one's hut, the kernels of truth to occupy one's mind; it is about introspection, trying to penetrate that tangled abyss of thoughts and ideas, as a life-long process. There are no windows to the soul, no keys to a secret chamber; looking within oneself is an intimate undertaking, and these frameworks of the mind, the towers, or, more accurately, huts stand as a testament to that dedicated passage of time.</p>
-            <p>Each cut in the wood was intentional and calculated; every dimension accounted for; just as one can direct their initial thoughts, I dictated the direction of the blade; however, just as thoughts, the final result, the little variations in each cut, came together in an unpredictable way. The wood panels, burnt by an unwieldy flame, stem from large concrete blocks, meant to represent one's core, that platonic soul that has tried to ascend to the divine in its chariot and has touched eternity.</p>
-        </div>
-    </div>
 
     <section class="detail-gallery">
         <div class="gallery-header reveal">
@@ -368,31 +299,31 @@
             <span class="gallery-count">04</span>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-row asym reveal rail-medium" style="--d:60ms">
-                <div class="g-img ar-3-4">
-                    <a class="image-zoom-link" href="../assets/weathered-huts-of-the-soul/single-tower-front-view-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/weathered-huts-of-the-soul/single-tower-front-view-web.jpg"
-                             alt="Single tower — full view" width="2134" height="3200" loading="lazy" decoding="async">
+            <div class="gallery-row two reveal rail-wide" style="--d:60ms">
+                <div class="g-img ar-4-3">
+                    <a class="image-zoom-link" href="../assets/void/side-view-web.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/void/side-view-web.jpg"
+                             alt="Void — side view" width="2400" height="1800" loading="lazy" decoding="async">
                     </a>
                 </div>
-                <div class="g-img ar-3-4">
-                    <a class="image-zoom-link" href="../assets/weathered-huts-of-the-soul/single-tower-close-up-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/weathered-huts-of-the-soul/single-tower-close-up-web.jpg"
-                             alt="Detail — burnt wood panels" width="3200" height="2134" loading="lazy" decoding="async">
+                <div class="g-img ar-4-3">
+                    <a class="image-zoom-link" href="../assets/void/back-view-web.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/void/back-view-web.jpg"
+                             alt="Void — back view" width="2400" height="1800" loading="lazy" decoding="async">
                     </a>
                 </div>
             </div>
-            <div class="gallery-row two reveal rail-medium" style="--d:120ms">
+            <div class="gallery-row two reveal rail-wide" style="--d:120ms">
                 <div class="g-img ar-4-3">
-                    <a class="image-zoom-link" href="../assets/weathered-huts-of-the-soul/base-tower-1-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/weathered-huts-of-the-soul/base-tower-1-web.jpg"
-                             alt="Concrete base — first tower" width="3200" height="2134" loading="lazy" decoding="async">
+                    <a class="image-zoom-link" href="../assets/void/second-side-view-web.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/void/second-side-view-web.jpg"
+                             alt="Void — second side view" width="2400" height="1800" loading="lazy" decoding="async">
                     </a>
                 </div>
                 <div class="g-img ar-4-3">
-                    <a class="image-zoom-link" href="../assets/weathered-huts-of-the-soul/base-tower-2-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/weathered-huts-of-the-soul/base-tower-2-web.jpg"
-                             alt="Concrete base — second tower" width="3200" height="2300" loading="lazy" decoding="async">
+                    <a class="image-zoom-link" href="../assets/void/alternate-front-view-web.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="../assets/void/alternate-front-view-web.jpg"
+                             alt="Void — alternate front view" width="2400" height="1800" loading="lazy" decoding="async">
                     </a>
                 </div>
             </div>
@@ -400,13 +331,13 @@
     </section>
 
     <nav class="work-nav">
-        <a href="./what-is-a-city.html" class="wnav-link">
+        <a href="./smokestack.html" class="wnav-link">
             <span class="wnav-dir">← Previous</span>
-            <span class="wnav-title">What Is a City?</span>
+            <span class="wnav-title">Smokestack</span>
         </a>
-        <a href="./ear-to-ear-a-listening-forest.html" class="wnav-link right">
+        <a href="./aqueduct.html" class="wnav-link right">
             <span class="wnav-dir">Next →</span>
-            <span class="wnav-title">Ear to Ear, A Listening Forest</span>
+            <span class="wnav-title">Aqueduct</span>
         </a>
     </nav>
 

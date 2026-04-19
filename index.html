@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gregory "Grisha" Parizhsky — Personal Artist Portfolio</title>
+    <title>Gregory Parizhsky — Personal Artist Portfolio</title>
+    <meta name="description" content="Sculpture portfolio for Gregory Parizhsky featuring ceramic and wood works, artist background, and material-based galleries.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/site-loader.css">
+    <script src="./assets/site-loader.js" defer></script>
 
     <style>
         /* ─────────────────────────────────────────────
@@ -54,28 +57,6 @@
             transform-origin: left;
             z-index: 200;
             transition: transform 80ms linear;
-        }
-
-        /* ─────────────────────────────────────────────
-           LOADER
-        ───────────────────────────────────────────── */
-        #loader {
-            position: fixed;
-            inset: 0;
-            background: var(--accent);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 500ms var(--ease);
-        }
-        #loader.out { opacity: 0; pointer-events: none; }
-        .loader-mark {
-            font-family: var(--mono);
-            font-size: 12px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: rgba(245, 247, 245, 0.5);
         }
 
         /* ─────────────────────────────────────────────
@@ -187,66 +168,95 @@
             opacity: 1;
             filter: none;
         }
-        .hero-year {
+        .hero-content { position: relative; z-index: 1; }
+        .hero-feature {
             position: absolute;
-            top: 50%; right: 56px;
+            top: 50%;
+            right: 91px;
             transform: translateY(-50%);
-            font-family: var(--serif);
-            font-style: italic;
-            font-size: clamp(140px, 20vw, 260px);
-            font-weight: 400;
-            color: var(--accent);
-            opacity: 0.06;
-            letter-spacing: -0.04em;
-            line-height: 1;
+            width: clamp(240px, 28vw, 380px);
+            height: auto;
+            aspect-ratio: 5 / 7;
+            overflow: hidden;
             pointer-events: none;
             user-select: none;
             z-index: 0;
         }
-        .hero-content { position: relative; z-index: 1; }
-        .hero-eyebrow {
+        .hero-feature img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 58% 48%;
+            transform: scale(1.10);
+            transform-origin: center;
+        }
+        .hero-name {
+            font-family: var(--sans);
+            font-size: clamp(24px, 8vw, 128px);
+            font-weight: 500;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin: 0;
+            white-space: nowrap;
+            display: block;
+            opacity: 0;
+            animation: fadeUp 900ms 1150ms var(--ease) forwards;
+        }
+        .hero-categories {
+            position: relative;
+            z-index: 1;
+            margin-top: 52px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 18px;
+            opacity: 0;
+            animation: fadeUp 700ms 1450ms var(--ease) forwards;
+        }
+        .hero-categories-label {
             font-family: var(--mono);
             font-size: 10px;
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 28px;
-            opacity: 0;
-            animation: fadeUp 700ms 1050ms var(--ease) forwards;
         }
-        .hero-name {
-            font-family: var(--serif);
-            font-size: clamp(100px, 15vw, 210px);
-            font-weight: 400;
-            line-height: 0.86;
-            letter-spacing: -0.04em;
-            color: var(--accent);
-            display: block;
-            opacity: 0;
-            animation: fadeUp 900ms 1150ms var(--ease) forwards;
+        .hero-categories-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 26px;
         }
-        .hero-studio {
-            font-family: var(--serif);
-            font-style: italic;
-            font-size: clamp(52px, 7.5vw, 110px);
+        .hero-category-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            font-family: var(--sans);
+            font-size: clamp(16px, 2.3vw, 23px);
             font-weight: 400;
-            line-height: 1.05;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.02em;
             color: var(--text);
-            display: block;
-            margin-top: -0.06em;
-            opacity: 0;
-            animation: fadeUp 900ms 1250ms var(--ease) forwards;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 250ms var(--ease);
         }
-        .hero-tagline {
-            font-family: var(--mono);
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-top: 52px;
-            opacity: 0;
-            animation: fadeUp 700ms 1450ms var(--ease) forwards;
+        .hero-category-link::after {
+            content: '→';
+            margin-left: 10px;
+            color: var(--accent);
+            transform: translateX(0);
+            transition: transform 250ms var(--ease), color 250ms var(--ease);
+        }
+        .hero-category-link:hover {
+            color: var(--accent);
+        }
+        .hero-category-link:hover::after,
+        .hero-category-link:focus-visible::after {
+            transform: translateX(4px);
+        }
+        .hero-category-link:focus-visible {
+            color: var(--accent);
+            outline: 2px solid rgba(48, 110, 65, 0.28);
+            outline-offset: 6px;
         }
         .hero-cue {
             position: absolute;
@@ -297,77 +307,8 @@
         }
 
         /* ─────────────────────────────────────────────
-           WORK
-        ───────────────────────────────────────────── */
-        .work-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 80px;
-        }
-        .work-heading {
-            font-family: var(--serif);
-            font-size: clamp(48px, 6vw, 80px);
-            font-weight: 400;
-            letter-spacing: -0.025em;
-            line-height: 1;
-        }
-        .work-count {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.14em;
-            color: var(--muted);
-        }
-
-        .columns {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .col {
-            padding-right: 44px;
-            border-right: 1px solid var(--border);
-        }
-        .col:first-child { padding-left: 0; }
-        .col:last-child {
-            padding-left: 44px;
-            padding-right: 0;
-            border-right: none;
-        }
-
-        .col-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 18px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 44px;
-        }
-        .col-title {
-            font-family: var(--mono);
-            font-size: 10px;
-            font-weight: 400;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: var(--accent);
-        }
-        .col-num {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.06em;
-            color: var(--border);
-        }
-
-        /* ─────────────────────────────────────────────
            ARTWORK CARD
         ───────────────────────────────────────────── */
-        .card {
-            margin-bottom: 52px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-        }
-        .card:last-child { margin-bottom: 0; }
-
         .card-img {
             aspect-ratio: 3 / 4;
             overflow: hidden;
@@ -392,54 +333,6 @@
             color: var(--muted);
             text-align: center;
             line-height: 1.8;
-        }
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.1) sepia(0.28) brightness(1.08);
-            transition: transform 750ms var(--ease), filter 600ms ease;
-            will-change: transform;
-        }
-        .card:hover .card-img img {
-            transform: scale(1.055);
-            filter: saturate(0.45) sepia(0.12) brightness(1.0);
-        }
-        .card-bar {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 450ms var(--ease);
-        }
-        .card:hover .card-bar { transform: scaleX(1); }
-
-        .card-title {
-            font-family: var(--serif);
-            font-size: 17px;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            color: var(--text);
-            margin-bottom: 5px;
-            transition: color 200ms;
-        }
-        .card:hover .card-title { color: var(--accent); }
-        .card.static { cursor: default; }
-        .card.static:hover .card-title { color: var(--text); }
-        .card.static:hover .card-img img {
-            transform: none;
-            filter: saturate(0.1) sepia(0.28) brightness(1.08);
-        }
-        .card.static:hover .card-bar { transform: scaleX(0); }
-
-        .card-meta {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.06em;
-            color: var(--muted);
-            line-height: 1.9;
         }
 
         /* ─────────────────────────────────────────────
@@ -493,7 +386,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: saturate(0.1) sepia(0.3) brightness(1.06);
             transition: transform 900ms var(--ease);
         }
         .about-portrait:hover img { transform: scale(1.03); }
@@ -569,7 +461,7 @@
             font-family: var(--mono);
             font-size: 10px;
             letter-spacing: 0.12em;
-            color: var(--muted);
+            color: #607060;
         }
 
         /* ─────────────────────────────────────────────
@@ -609,30 +501,34 @@
         @media (max-width: 960px) {
             #nav, .hero, .section { padding-left: 28px; padding-right: 28px; }
             .section { padding-top: 88px; padding-bottom: 88px; }
-            .columns { grid-template-columns: 1fr; }
-            .col {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-                padding-bottom: 60px !important;
-                margin-bottom: 60px;
-            }
-            .col:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0 !important; }
             .about-grid { grid-template-columns: 1fr; gap: 56px; }
             .about-sticky { position: static; }
-            .hero-year { display: none; }
+            .hero-feature {
+                position: static;
+                transform: none;
+                width: min(68vw, 280px);
+                margin-top: 28px;
+                align-self: flex-end;
+            }
+            .hero-categories {
+                margin-top: 36px;
+                gap: 14px;
+            }
             .hero-cue { display: none; }
         }
         @media (max-width: 600px) {
-            .work-header { flex-direction: column; gap: 12px; }
+            .hero-categories-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Loader -->
-    <div id="loader"><p class="loader-mark">G · P</p></div>
+    <div id="loader" class="site-loader" aria-hidden="true"><p class="loader-mark">G · P</p></div>
 
     <!-- Scroll progress bar -->
     <div id="progress"></div>
@@ -642,9 +538,10 @@
 
     <!-- ─── NAVIGATION ─── -->
     <nav id="nav">
-        <a href="#" class="nav-mark">G · P</a>
+        <a href="./index.html" class="nav-mark">G · P</a>
         <ul class="nav-list">
-            <li><a href="#work">Work</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./gallery/ceramic.html">Galleries</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -653,91 +550,27 @@
     <!-- ─── HERO ─── -->
     <section class="hero">
         <div class="hero-texture"></div>
-        <div class="hero-year" aria-hidden="true">2026</div>
 
         <div class="hero-content">
-            <p class="hero-eyebrow">Sculptor, Hamilton College '26</p>
-            <span class="hero-name">Gregory</span>
-            <span class="hero-studio">&quot;Grisha&quot; Parizhsky</span>
-            <p class="hero-tagline">Ceramic &nbsp;·&nbsp; Wood &nbsp;·&nbsp; Mixed Media</p>
+            <h1 class="hero-name">Gregory Parizhsky</h1>
         </div>
+
+        <div class="hero-feature">
+            <img src="./assets/a-totemic-exploration-of-jazz/front-view-thumb.jpg" alt="A Totemic Exploration of Jazz" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+
+        <nav class="hero-categories" aria-label="Browse by material">
+            <span class="hero-categories-label">Browse by material ↓</span>
+            <div class="hero-categories-links">
+                <a href="./gallery/ceramic.html" class="hero-category-link">Ceramic</a>
+                <a href="./gallery/wood.html" class="hero-category-link">Wood</a>
+                <a href="./gallery/mixed-media.html" class="hero-category-link">Mixed Media</a>
+            </div>
+        </nav>
 
         <div class="hero-cue">
             <div class="cue-track"></div>
             <span class="cue-label">Scroll</span>
-        </div>
-    </section>
-
-    <!-- ─── WORK ─── -->
-    <section class="section" id="work">
-        <div class="work-header reveal">
-            <h2 class="work-heading">Work</h2>
-            <span class="work-count">5 selected works — 2024</span>
-        </div>
-
-        <div class="columns">
-
-            <!-- Ceramic -->
-            <div class="col">
-                <div class="col-head reveal" style="--d:0ms">
-                    <span class="col-title">Ceramic</span>
-                    <span class="col-num">01</span>
-                </div>
-
-                <a href="./work/a-totemic-exploration-of-jazz.html" class="card reveal" style="--d:60ms">
-                    <div class="card-img">
-                        <img src="./assets/a-totemic-exploration-of-jazz/front-view-thumb.jpg" alt="A Totemic Exploration of Jazz" width="1200" height="800" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">A Totemic Exploration of Jazz</p>
-                    <p class="card-meta">2024 &nbsp;·&nbsp; Ceramic, Steel Rod with Concrete Base</p>
-                </a>
-
-                <a href="./work/a-mycelium-mind.html" class="card reveal" style="--d:120ms">
-                    <div class="card-img">
-                        <img src="./assets/a-mycelium-mind/front-view-thumb.jpg" alt="A Mycelium Mind" width="1044" height="1200" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">A Mycelium Mind</p>
-                    <p class="card-meta">2024 &nbsp;·&nbsp; Ceramic<br>4' x 3' x Dimensions Variable</p>
-                </a>
-            </div>
-
-            <!-- Wood -->
-            <div class="col">
-                <div class="col-head reveal" style="--d:100ms">
-                    <span class="col-title">Wood</span>
-                    <span class="col-num">02</span>
-                </div>
-
-                <a href="./work/ear-to-ear-a-listening-forest.html" class="card reveal" style="--d:160ms">
-                    <div class="card-img">
-                        <img src="./assets/ear-to-ear-a-listening-forest/front-view-thumb.jpeg" alt="Ear to Ear, A Listening Forest" width="900" height="1200" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">Ear to Ear, A Listening Forest</p>
-                    <p class="card-meta">2024 &nbsp;·&nbsp; Burnt Wood, Plastic Headphones</p>
-                </a>
-
-                <a href="./work/what-is-a-city.html" class="card reveal" style="--d:220ms">
-                    <div class="card-img">
-                        <img src="./assets/what-is-a-city/side-view-thumb.jpeg" alt="What Is a City?" width="900" height="1200" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">What Is a City?</p>
-                    <p class="card-meta">2024 &nbsp;·&nbsp; Wood<br>4' x 3' x Dimensions Variable</p>
-                </a>
-
-                <a href="./work/weathered-huts-of-the-soul.html" class="card reveal" style="--d:280ms">
-                    <div class="card-img">
-                        <img src="./assets/weathered-huts-of-the-soul/single-tower-front-view-thumb.jpg" alt="The Weathered Huts of the Soul" width="800" height="1200" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">The Weathered Huts of the Soul</p>
-                    <p class="card-meta">2024 &nbsp;·&nbsp; Concrete, Burnt Wood</p>
-                </a>
-            </div>
-
         </div>
     </section>
 
@@ -759,7 +592,7 @@
                 </div>
                 <div class="about-bio">
                     <p>Born and raised in NYC I was imbued with a passion for architecture and design. Picking out the details amidst the inundation of monolithic buildings became a key element of my wanderings within the city.</p>
-                    <p>At Hamilton College I am pursuing an art and economics degree, an intersection of the core elements of architecture, one driven by artistic pursuits and confined by economic concerns. My focus in art is sculpture, creating pieces that alter the space within which they stand, asking viewers to alter their bodily state to completely take in each detail.</p>
+                    <p>I am pursuing an art and economics degree, an intersection of the core elements of architecture, one driven by artistic pursuits and confined by economic concerns. My focus in art is sculpture, creating pieces that alter the space within which they stand, asking viewers to alter their bodily state to completely take in each detail.</p>
                     <p>Through economics I have learned to understand the limitations and proper practices within the business world.</p>
                     <p>I am curious and passionate about everything art and architecture related and would love to be part of an architecture team that is just as passionate.</p>
                 </div>
@@ -781,20 +614,11 @@
 
     <!-- ─── FOOTER ─── -->
     <footer>
-        <span>Gregory &quot;Grisha&quot; Parizhsky</span>
+        <span>Gregory Parizhsky</span>
         <span>&copy; 2026</span>
     </footer>
 
     <script>
-        /* Loader */
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            setTimeout(() => {
-                loader.classList.add('out');
-                setTimeout(() => loader.remove(), 550);
-            }, 650);
-        });
-
         /* Scroll progress */
         const prog = document.getElementById('progress');
         const updateProgress = () => {
