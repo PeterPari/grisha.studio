@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gregory Parizhsky — Personal Artist Portfolio</title>
-    <meta name="description" content="Sculpture portfolio for Gregory Parizhsky featuring ceramic and wood works, artist background, and material-based galleries.">
+    <meta name="description" content="Sculpture portfolio for Gregory Parizhsky featuring ceramic, wood, and in-progress works, artist background, and gallery pages.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,6 +148,7 @@
             position: relative;
             z-index: 1;
             min-height: 100svh;
+            min-height: 100dvh;
             padding: 0 56px 88px;
             display: flex;
             flex-direction: column;
@@ -500,21 +501,73 @@
         ───────────────────────────────────────────── */
         @media (max-width: 960px) {
             #nav, .hero, .section { padding-left: 28px; padding-right: 28px; }
+            #nav {
+                padding-top: 22px;
+                padding-bottom: 18px;
+            }
+            .nav-list {
+                flex-wrap: wrap;
+                gap: 14px 18px;
+                justify-content: flex-end;
+            }
+            .hero {
+                min-height: auto;
+                padding-top: 128px;
+                padding-bottom: 64px;
+                justify-content: flex-start;
+                gap: 24px;
+            }
             .section { padding-top: 88px; padding-bottom: 88px; }
             .about-grid { grid-template-columns: 1fr; gap: 56px; }
             .about-sticky { position: static; }
+            .hero-content {
+                max-width: min(100%, 26rem);
+            }
+            .hero-name {
+                font-size: clamp(40px, 9.5vw, 72px);
+                line-height: 0.92;
+                letter-spacing: -0.045em;
+            }
             .hero-feature {
                 position: static;
+                top: auto;
+                right: auto;
                 transform: none;
-                width: min(68vw, 280px);
-                margin-top: 28px;
-                align-self: flex-end;
+                width: min(100%, 320px);
+                aspect-ratio: 4 / 5;
+                margin-top: 0;
+                align-self: flex-start;
+            }
+            .hero-feature img {
+                object-position: 72% 48%;
+                transform: scale(1.03);
             }
             .hero-categories {
-                margin-top: 36px;
-                gap: 14px;
+                margin-top: 0;
+                gap: 12px;
             }
             .hero-cue { display: none; }
+        }
+        @media (max-width: 720px) {
+            #nav {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-list {
+                justify-content: flex-start;
+            }
+            .hero {
+                padding-top: 150px;
+                gap: 20px;
+            }
+            .hero-name {
+                font-size: clamp(30px, 8.9vw, 44px);
+                letter-spacing: -0.05em;
+            }
+            .hero-feature {
+                width: min(100%, 300px);
+            }
         }
         @media (max-width: 600px) {
             .hero-categories-links {
@@ -559,12 +612,13 @@
             <img src="./assets/a-totemic-exploration-of-jazz/front-view-thumb.jpg" alt="A Totemic Exploration of Jazz" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high">
         </div>
 
-        <nav class="hero-categories" aria-label="Browse by material">
-            <span class="hero-categories-label">Browse by material ↓</span>
+        <nav class="hero-categories" aria-label="Browse works">
+            <span class="hero-categories-label">Browse works ↓</span>
             <div class="hero-categories-links">
                 <a href="./gallery/ceramic.html" class="hero-category-link">Ceramic</a>
                 <a href="./gallery/wood.html" class="hero-category-link">Wood</a>
                 <a href="./gallery/mixed-media.html" class="hero-category-link">Mixed Media</a>
+                <a href="./gallery/work-in-progress.html" class="hero-category-link">Work in Progress</a>
             </div>
         </nav>
 
@@ -586,8 +640,8 @@
 
             <div class="reveal" style="--d:140ms">
                 <div class="about-portrait">
-                    <div class="card-img placeholder" aria-label="Portrait placeholder">
-                        <p class="placeholder-label">Portrait placeholder<br>Image coming soon</p>
+                    <div class="card-img placeholder" aria-label="Gregory Parizhsky">
+                        <p class="placeholder-label">Gregory Parizhsky<br>Sculpture &amp; Architecture</p>
                     </div>
                 </div>
                 <div class="about-bio">
