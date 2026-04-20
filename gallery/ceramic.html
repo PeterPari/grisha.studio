@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/gallery.css">
     <link rel="stylesheet" href="../assets/site-loader.css">
+    <script>if(sessionStorage.getItem('gallery-tab-nav')==='1'){document.documentElement.classList.add('gallery-tab-nav');}</script>
     <script src="../assets/site-loader.js" defer></script>
+    <script src="../assets/gallery-tabs.js" defer></script>
 </head>
 <body>
     <div id="loader" class="site-loader" aria-hidden="true"><p class="loader-mark">G · P</p></div>
@@ -47,7 +49,7 @@
         <section class="gallery-section" aria-labelledby="ceramic-selection">
             <div class="gallery-section-head">
                 <span class="gallery-section-label" id="ceramic-selection">Selected works</span>
-                <span class="gallery-count">07 works</span>
+                <span class="gallery-count">06 works</span>
             </div>
 
             <div class="gallery-grid">
@@ -70,7 +72,7 @@
                 </a>
 
                 <a href="../work/icarus.html" class="card">
-                    <div class="card-img" style="aspect-ratio: 4 / 3;">
+                    <div class="card-img">
                         <img src="../assets/icarus/front-view-thumb.jpg" alt="Icarus" width="1200" height="900" loading="lazy" decoding="async">
                         <div class="card-bar"></div>
                     </div>
@@ -78,17 +80,8 @@
                     <p class="card-meta">2025 &nbsp;·&nbsp; Ceramic<br>23.5&quot; &times; 15&quot; &times; 9.5&quot;</p>
                 </a>
 
-                <a href="../work/smokestack.html" class="card">
-                    <div class="card-img" style="aspect-ratio: 4 / 3;">
-                        <img src="../assets/smokestack/front-view-thumb.jpg" alt="Smokestack" width="1200" height="900" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">Smokestack</p>
-                    <p class="card-meta">2024 &nbsp;·&nbsp; Ceramic &nbsp;·&nbsp; Work in Progress<br>54&quot; &times; 21&quot; &times; 13.5&quot;</p>
-                </a>
-
                 <a href="../work/void.html" class="card">
-                    <div class="card-img" style="aspect-ratio: 4 / 3;">
+                    <div class="card-img">
                         <img src="../assets/void/front-view-thumb.jpg" alt="Void" width="1200" height="900" loading="lazy" decoding="async">
                         <div class="card-bar"></div>
                     </div>
@@ -97,7 +90,7 @@
                 </a>
 
                 <a href="../work/aqueduct.html" class="card">
-                    <div class="card-img" style="aspect-ratio: 4 / 3;">
+                    <div class="card-img">
                         <img src="../assets/aqueduct/front-view-thumb.jpg" alt="Aqueduct" width="1200" height="900" loading="lazy" decoding="async">
                         <div class="card-bar"></div>
                     </div>
@@ -106,8 +99,8 @@
                 </a>
 
                 <a href="../work/hydrant.html" class="card">
-                    <div class="card-img" style="aspect-ratio: 4 / 3;">
-                        <img src="../assets/hydrant/front-view-thumb.jpg" alt="Hydrant" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="card-img">
+                        <img class="crop-up-40" src="../assets/hydrant/front-view-thumb.jpg" alt="Hydrant" width="1200" height="900" loading="lazy" decoding="async">
                         <div class="card-bar"></div>
                     </div>
                     <p class="card-title">Hydrant</p>
@@ -119,7 +112,7 @@
 
     <footer>
         <span>Gregory Parizhsky</span>
-        <a href="../index.html">Back to portfolio</a>
+        <span class="footer-meta"><a class="footer-credit" href="https://tech-savvies.com/">Made by Tech-Savvvies</a><span>&copy; 2026</span></span>
     </footer>
 </body>
 </html>

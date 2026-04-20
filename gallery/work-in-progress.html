@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work in Progress — Gregory Parizhsky</title>
-    <meta name="description" content="Works in progress by Gregory Parizhsky, including Marble Work 1, Marble Work 2, Marble Work 3, and Tower of Babel.">
+    <meta name="description" content="Works in progress by Gregory Parizhsky, including Marble Work 1, Marble Work 2, Marble Work 3, Smokestack, and Tower of Babel.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/gallery.css">
     <link rel="stylesheet" href="../assets/site-loader.css">
+    <script>if(sessionStorage.getItem('gallery-tab-nav')==='1'){document.documentElement.classList.add('gallery-tab-nav');}</script>
     <script src="../assets/site-loader.js" defer></script>
+    <script src="../assets/gallery-tabs.js" defer></script>
 </head>
 <body>
     <div id="loader" class="site-loader" aria-hidden="true"><p class="loader-mark">G · P</p></div>
@@ -43,6 +45,33 @@
                 </div>
             </div>
         </header>
+
+        <section class="gallery-section" aria-labelledby="measured-selection">
+            <div class="gallery-section-head">
+                <span class="gallery-section-label" id="measured-selection">Measured entries</span>
+                <span class="gallery-count">02 works · Ceramic · 2024-2026</span>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="../work/smokestack.html" class="card">
+                    <div class="card-img">
+                        <img class="crop-down-10" src="../assets/smokestack/front-view-thumb.jpg" alt="Smokestack" width="1200" height="900" loading="lazy" decoding="async">
+                        <div class="card-bar"></div>
+                    </div>
+                    <p class="card-title">Smokestack</p>
+                    <p class="card-meta">2024 &nbsp;·&nbsp; Ceramic &nbsp;·&nbsp; Work in Progress<br>54&quot; &times; 21&quot; &times; 13.5&quot;</p>
+                </a>
+
+                <a href="../work/tower-of-babel.html" class="card">
+                    <div class="card-img">
+                        <img src="../assets/tower-of-babel/front-view-thumb.jpg" alt="Tower of Babel" width="1200" height="900" loading="lazy" decoding="async">
+                        <div class="card-bar"></div>
+                    </div>
+                    <p class="card-title">Tower of Babel</p>
+                    <p class="card-meta">2026 &nbsp;·&nbsp; 92&quot; &times; 15&quot; &times; 15&quot;<br>Work in Progress</p>
+                </a>
+            </div>
+        </section>
 
         <section class="gallery-section" aria-labelledby="wip-selection">
             <div class="gallery-section-head">
@@ -79,29 +108,11 @@
                 </a>
             </div>
         </section>
-
-        <section class="gallery-section" aria-labelledby="measured-selection">
-            <div class="gallery-section-head">
-                <span class="gallery-section-label" id="measured-selection">Measured entries</span>
-                <span class="gallery-count">01 work · Ceramic · 2026</span>
-            </div>
-
-            <div class="gallery-grid single-column">
-                <a href="../work/tower-of-babel.html" class="card">
-                    <div class="card-img">
-                        <img src="../assets/tower-of-babel/front-view-thumb.jpg" alt="Tower of Babel" width="1200" height="900" loading="lazy" decoding="async">
-                        <div class="card-bar"></div>
-                    </div>
-                    <p class="card-title">Tower of Babel</p>
-                    <p class="card-meta">2026 &nbsp;·&nbsp; 92&quot; &times; 15&quot; &times; 15&quot;<br>Work in Progress</p>
-                </a>
-            </div>
-        </section>
     </main>
 
     <footer>
         <span>Gregory Parizhsky</span>
-        <a href="../index.html">Back to portfolio</a>
+        <span class="footer-meta"><a class="footer-credit" href="https://tech-savvies.com/">Made by Tech-Savvvies</a><span>&copy; 2026</span></span>
     </footer>
 </body>
 </html>

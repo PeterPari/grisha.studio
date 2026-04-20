@@ -93,7 +93,11 @@
             border-top: 1px solid var(--border);
             display: flex; justify-content: space-between; align-items: center;
         }
-        footer span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--muted); }
+        footer span, footer a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--muted); }
+        .footer-meta { display: inline-flex; align-items: center; justify-content: flex-end; gap: 10px; }
+        footer a { color: inherit; text-decoration: none; transition: opacity 200ms ease; }
+        footer a:hover, footer a:focus-visible { opacity: 0.72; outline: none; }
+        .footer-credit { text-transform: none; }
 
         .back-wrap { position: relative; z-index: 1; padding: 120px 56px 0; }
         .back-link {
@@ -211,7 +215,9 @@
             display: flex; justify-content: space-between;
         }
         .gallery-count { color: var(--border); }
-        .gallery-grid { display: flex; flex-direction: column; gap: 16px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 1320px; margin: 0 auto; align-items: start; }
+        .g-span-2 { grid-column: span 2; }
+        .gallery-grid.three { grid-template-columns: repeat(3, 1fr); }
         .gallery-row {
             display: grid; gap: 16px; align-items: start;
             width: 100%; max-width: var(--row-max, 1180px); margin: 0 auto;
@@ -260,7 +266,9 @@
             .detail-body { padding: 56px 28px; grid-template-columns: 1fr; gap: 32px; }
             .body-label { position: static; }
             .detail-gallery { padding: 0 28px 88px; }
-            .gallery-row.two, .gallery-row.asym, .gallery-row.asym-r { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .g-span-2 { grid-column: span 1; }
+            .gallery-grid.three { grid-template-columns: 1fr; }
             .work-nav { padding: 40px 28px; }
         }
         @media (max-width: 600px) {
@@ -331,28 +339,24 @@
             <span>Views</span>
             <span class="gallery-count">03</span>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-row one reveal rail-narrow" style="--d:60ms">
-                <div class="g-img ar-4-3">
-                    <a class="image-zoom-link" href="../assets/a-mycelium-mind/diagonal-bottom-view-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/a-mycelium-mind/diagonal-bottom-view-web.jpg"
-                             alt="Diagonal view — mushrooms emerging from the grid" width="2134" height="3200" loading="lazy" decoding="async">
-                    </a>
-                </div>
+        <div class="gallery-grid three">
+            <div class="g-img ar-4-3 reveal" style="--d:60ms">
+                <a class="image-zoom-link" href="../assets/a-mycelium-mind/diagonal-bottom-view-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/a-mycelium-mind/diagonal-bottom-view-web.jpg"
+                         alt="Diagonal view — mushrooms emerging from the grid" width="2134" height="3200" loading="lazy" decoding="async">
+                </a>
             </div>
-            <div class="gallery-row two reveal rail-medium" style="--d:120ms">
-                <div class="g-img ar-3-4">
-                    <a class="image-zoom-link" href="../assets/a-mycelium-mind/close-up-left-close-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/a-mycelium-mind/close-up-left-close-web.jpg"
-                             alt="Detail — left panel" width="3200" height="2134" loading="lazy" decoding="async">
-                    </a>
-                </div>
-                <div class="g-img ar-3-4">
-                    <a class="image-zoom-link" href="../assets/a-mycelium-mind/close-up-bottom-close-web.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/a-mycelium-mind/close-up-bottom-close-web.jpg"
-                             alt="Detail — bottom panel" width="3200" height="2134" loading="lazy" decoding="async">
-                    </a>
-                </div>
+            <div class="g-img ar-3-4 reveal" style="--d:80ms">
+                <a class="image-zoom-link" href="../assets/a-mycelium-mind/close-up-left-close-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/a-mycelium-mind/close-up-left-close-web.jpg"
+                         alt="Detail — left panel" width="3200" height="2134" loading="lazy" decoding="async">
+                </a>
+            </div>
+            <div class="g-img ar-3-4 reveal" style="--d:100ms">
+                <a class="image-zoom-link" href="../assets/a-mycelium-mind/close-up-bottom-close-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/a-mycelium-mind/close-up-bottom-close-web.jpg"
+                         alt="Detail — bottom panel" width="3200" height="2134" loading="lazy" decoding="async">
+                </a>
             </div>
         </div>
     </section>
@@ -370,7 +374,7 @@
 
     <footer>
         <span>Gregory Parizhsky</span>
-        <span>&copy; 2026</span>
+        <span class="footer-meta"><a class="footer-credit" href="https://tech-savvies.com/">Made by Tech-Savvvies</a><span>&copy; 2026</span></span>
     </footer>
 
     <script>

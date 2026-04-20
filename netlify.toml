@@ -1,10 +1,11 @@
 [build]
-  publish = "."
+  command = "rm -rf site-dist && mkdir -p site-dist && cp -R index.html assets gallery work site-dist/ && find site-dist -name '.DS_Store' -delete && find site-dist -name '._*' -delete && find site-dist -iname '*.md' -delete"
+  publish = "site-dist"
 
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' mailto:;"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; form-action 'self' mailto:; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;"
     Permissions-Policy = "camera=(), geolocation=(), microphone=()"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Content-Type-Options = "nosniff"

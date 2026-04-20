@@ -387,6 +387,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+                object-position: center 24%;
             transition: transform 900ms var(--ease);
         }
         .about-portrait:hover img { transform: scale(1.03); }
@@ -458,11 +459,31 @@
             justify-content: space-between;
             align-items: center;
         }
-        footer span {
+        footer span,
+        footer a {
             font-family: var(--mono);
             font-size: 10px;
             letter-spacing: 0.12em;
             color: #607060;
+        }
+        .footer-meta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        footer a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 200ms ease;
+        }
+        footer a:hover,
+        footer a:focus-visible {
+            opacity: 0.72;
+            outline: none;
+        }
+        .footer-credit {
+            text-transform: none;
         }
 
         /* ─────────────────────────────────────────────
@@ -640,15 +661,12 @@
 
             <div class="reveal" style="--d:140ms">
                 <div class="about-portrait">
-                    <div class="card-img placeholder" aria-label="Gregory Parizhsky">
-                        <p class="placeholder-label">Gregory Parizhsky<br>Sculpture &amp; Architecture</p>
+                    <div class="card-img">
+                        <img src="./assets/profile-photo-web.jpg" alt="Portrait of Gregory Parizhsky" width="1600" height="1061" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="about-bio">
-                    <p>Born and raised in NYC I was imbued with a passion for architecture and design. Picking out the details amidst the inundation of monolithic buildings became a key element of my wanderings within the city.</p>
-                    <p>I am pursuing an art and economics degree, an intersection of the core elements of architecture, one driven by artistic pursuits and confined by economic concerns. My focus in art is sculpture, creating pieces that alter the space within which they stand, asking viewers to alter their bodily state to completely take in each detail.</p>
-                    <p>Through economics I have learned to understand the limitations and proper practices within the business world.</p>
-                    <p>I am curious and passionate about everything art and architecture related and would love to be part of an architecture team that is just as passionate.</p>
+                    <p>Gregory Parizhsky is an NYC based sculptor who utilizes a range of materials to create large scale abstract works. Central concepts to his practice include philosophy and literature, and recently, an exploration of religion and how different cultures interact with shrines. He is a student at Hamilton College studying Studio Art and Economics.</p>
                 </div>
             </div>
 
@@ -669,7 +687,7 @@
     <!-- ─── FOOTER ─── -->
     <footer>
         <span>Gregory Parizhsky</span>
-        <span>&copy; 2026</span>
+        <span class="footer-meta"><a class="footer-credit" href="https://tech-savvies.com/">Made by Tech-Savvvies</a><span>&copy; 2026</span></span>
     </footer>
 
     <script>

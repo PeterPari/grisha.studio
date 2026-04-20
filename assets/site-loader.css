@@ -44,3 +44,12 @@ body.site-loader-active {
         transition-duration: 180ms;
     }
 }
+
+/* Hide loader immediately when navigating between gallery tabs */
+html.gallery-tab-nav .site-loader {
+    display: none;
+}
+
+html.gallery-tab-nav body {
+    overflow: auto;
+}

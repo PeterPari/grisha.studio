@@ -1,4 +1,14 @@
 (() => {
+    // Skip loader when navigating between gallery tabs
+    if (document.documentElement.classList.contains('gallery-tab-nav')) {
+        sessionStorage.removeItem('gallery-tab-nav');
+        document.documentElement.classList.remove('gallery-tab-nav');
+        const loader = document.getElementById('loader');
+        if (loader) loader.remove();
+        document.body.classList.add('gallery-entering');
+        return;
+    }
+
     const body = document.body;
     if (!body) {
         return;
