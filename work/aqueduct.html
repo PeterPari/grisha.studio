@@ -190,7 +190,24 @@
             transform: scale(1.015);
         }
 
-        .detail-gallery { position: relative; z-index: 1; padding: 88px 56px 128px; }
+        .detail-body {
+            position: relative; z-index: 1; padding: 88px 56px; border-top: 1px solid var(--border);
+            display: grid; grid-template-columns: 220px 1fr; gap: 80px; align-items: start;
+        }
+        .body-label {
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; color: var(--accent);
+            text-transform: uppercase; position: sticky; top: 120px; line-height: 1.9;
+        }
+        .body-label .sub { color: var(--muted); display: block; margin-top: 6px; font-size: 9px; }
+        .statement .opener {
+            font-family: var(--serif); font-style: italic; font-size: 20px;
+            line-height: 1.72; color: var(--text); display: block; margin-bottom: 30px;
+        }
+        .statement p { font-size: 15.5px; font-weight: 300; line-height: 1.88; color: var(--text); }
+        .statement p + p { margin-top: 22px; }
+        .statement em { font-style: italic; }
+
+        .detail-gallery { position: relative; z-index: 1; padding: 0 56px 128px; }
         .gallery-header {
             font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
             color: var(--muted); padding: 26px 0; margin-bottom: 44px;
@@ -245,7 +262,9 @@
             .detail-header { padding: 24px 28px 40px; }
             .detail-cue { display: none; }
             .detail-lead { padding: 0 28px; }
-            .detail-gallery { padding: 56px 28px 88px; }
+            .detail-body { padding: 56px 28px; grid-template-columns: 1fr; gap: 32px; }
+            .body-label { position: static; }
+            .detail-gallery { padding: 0 28px 88px; }
             .gallery-grid { grid-template-columns: 1fr; }
             .g-span-2 { grid-column: span 1; }
             .work-nav { padding: 40px 28px; }
@@ -303,6 +322,17 @@
                  alt="Aqueduct — front view" width="2400" height="1800" loading="eager" decoding="async" fetchpriority="high">
         </a>
     </figure>
+
+    <div class="detail-body">
+        <div class="body-label reveal">
+            Statement
+            <span class="sub">Gregory Parizhsky<br>2025</span>
+            <span class="sub" style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border);">Dimensions<br>9&quot; &times; 18&quot; &times; 4.5&quot;</span>
+        </div>
+        <div class="statement reveal" style="--d:80ms">
+            <p>An exploration of what makes the arch and the bridge so enticing and attractive to the eye. Is it that we inherently understand the structural integrity of its support?</p>
+        </div>
+    </div>
 
     <section class="detail-gallery">
         <div class="gallery-header reveal">
