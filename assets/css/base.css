@@ -1,0 +1,218 @@
+/* ─────────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────────── */
+:root {
+    --bg:       #F5F7F5;
+    --surface:  #FFFFFF;
+    --text:     #1C271E;
+    --muted:    #6A7A6B;
+    --accent:   #306e41;
+    --border:   #DDE5DD;
+    --serif:    'Instrument Serif', Georgia, serif;
+    --sans:     'DM Sans', 'Helvetica Neue', sans-serif;
+    --mono:     'DM Mono', 'SF Mono', monospace;
+    --ease:     cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+/* ─────────────────────────────────────────────
+   KEYFRAMES
+───────────────────────────────────────────── */
+@keyframes pageIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes driftA {
+    to { transform: translate(4%, 9%); }
+}
+@keyframes driftB {
+    to { transform: translate(-5%, -6%); }
+}
+@keyframes trackDrop {
+    0%   { top: -50%; }
+    100% { top: 110%; }
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL PROGRESS
+───────────────────────────────────────────── */
+#progress {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 200;
+    transition: transform 80ms linear;
+}
+
+/* ─────────────────────────────────────────────
+   AMBIENT BACKGROUND
+───────────────────────────────────────────── */
+.ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+.ambient::before {
+    content: '';
+    position: absolute;
+    top: -15%; left: -5%;
+    width: 55%; height: 55%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(50,69,55,0.07) 0%, transparent 68%);
+    animation: driftA 32s ease-in-out infinite alternate;
+}
+.ambient::after {
+    content: '';
+    position: absolute;
+    bottom: -8%; right: -8%;
+    width: 45%; height: 45%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(50,69,55,0.05) 0%, transparent 65%);
+    animation: driftB 26s ease-in-out infinite alternate;
+}
+
+/* ─────────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────────── */
+#nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 28px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 500ms ease, backdrop-filter 500ms ease, border-color 400ms ease;
+    border-bottom: 1px solid transparent;
+}
+#nav.scrolled {
+    background: rgba(245,247,245,0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--border);
+}
+.nav-mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    text-decoration: none;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.nav-list a {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 200ms;
+}
+.nav-list a:hover { color: var(--accent); }
+
+/* ─────────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity  750ms var(--ease) var(--d, 0ms),
+        transform 750ms var(--ease) var(--d, 0ms);
+}
+.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+footer {
+    position: relative;
+    z-index: 1;
+    padding: 28px 56px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer span,
+footer a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+.footer-meta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 200ms ease;
+}
+footer a:hover,
+footer a:focus-visible {
+    opacity: 0.72;
+    outline: none;
+}
+.footer-credit { text-transform: none; }
+
+/* ─────────────────────────────────────────────
+   CUE TRACK (scroll indicator)
+───────────────────────────────────────────── */
+.cue-track {
+    width: 1px;
+    height: 68px;
+    background: var(--border);
+    position: relative;
+    overflow: hidden;
+}
+.cue-track::after {
+    content: '';
+    position: absolute;
+    top: -60%; left: 0;
+    width: 100%; height: 50%;
+    background: var(--accent);
+    animation: trackDrop 2s 1.8s ease-in-out infinite;
+}
+.cue-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    writing-mode: vertical-lr;
+}

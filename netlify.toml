@@ -1,5 +1,5 @@
 [build]
-  command = "rm -rf site-dist && mkdir -p site-dist && cp -R index.html assets gallery work site-dist/ && find site-dist -name '.DS_Store' -delete && find site-dist -name '._*' -delete && find site-dist -iname '*.md' -delete"
+  command = "bash scripts/build-site.sh"
   publish = "site-dist"
 
 [[headers]]
