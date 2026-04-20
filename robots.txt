@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /source-materials/
+Disallow: /media-source/
+Disallow: /content/
+
+Sitemap: https://grisha.studio/sitemap.xml

@@ -1,0 +1,45 @@
+# Gregory Parizhsky
+
+> Official portfolio of Gregory Parizhsky (also known as Greg Parizhsky, Parizhsky, Grisha Parizhsky) — NYC-based sculptor working in ceramic, wood, and mixed media. Student at Hamilton College studying Studio Art and Economics.
+
+Gregory Parizhsky is a New York City based sculptor who uses a range of materials to create large-scale abstract works. Central concepts include philosophy, literature, and an exploration of religion and how different cultures interact with shrines.
+
+- Name: Gregory Parizhsky
+- Also known as: Greg Parizhsky, Parizhsky, Grisha Parizhsky
+- Role: Sculptor
+- Location: New York, NY, USA
+- Education: Hamilton College (Studio Art, Economics)
+- Contact: gregory.parizhsky@gmail.com
+- Website: https://grisha.studio/
+
+## Homepage
+
+- [Homepage (Markdown mirror)](https://grisha.studio/index.md): full homepage content as Markdown
+- [Homepage (HTML)](https://grisha.studio/): canonical homepage
+
+## Galleries
+
+- [Ceramic](https://grisha.studio/gallery/ceramic.html): ceramic sculptures and installations
+- [Wood](https://grisha.studio/gallery/wood.html): wood-based sculptures and installations
+- [Mixed Media](https://grisha.studio/gallery/mixed-media.html): mixed-media sculptural works
+- [Work in Progress](https://grisha.studio/gallery/work-in-progress.html): active studies and unfinished works
+
+## Works
+
+- [A Mycelium Mind](https://grisha.studio/work/a-mycelium-mind.html)
+- [A Totemic Exploration of Jazz](https://grisha.studio/work/a-totemic-exploration-of-jazz.html)
+- [Aqueduct](https://grisha.studio/work/aqueduct.html)
+- [Ear to Ear, A Listening Forest](https://grisha.studio/work/ear-to-ear-a-listening-forest.html)
+- [Hydrant](https://grisha.studio/work/hydrant.html)
+- [Icarus](https://grisha.studio/work/icarus.html)
+- [Smokestack](https://grisha.studio/work/smokestack.html)
+- [Tower of Babel](https://grisha.studio/work/tower-of-babel.html)
+- [Void](https://grisha.studio/work/void.html)
+- [Weathered Huts of the Soul](https://grisha.studio/work/weathered-huts-of-the-soul.html)
+- [What Is a City](https://grisha.studio/work/what-is-a-city.html)
+- [Wishing Well](https://grisha.studio/work/wishing-well.html)
+- [Wood Gong](https://grisha.studio/work/wood-gong.html)
+
+## Optional
+
+- [Sitemap](https://grisha.studio/sitemap.xml): XML sitemap of all indexed pages
