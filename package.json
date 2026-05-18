@@ -1,0 +1,9 @@
+{
+  "name": "grisha-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx live-server --port=3000 --no-browser",
+    "build": "bash scripts/build-site.sh"
+  }
+}

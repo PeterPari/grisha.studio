@@ -1,3 +1,4 @@
+**/.DS_Store
 .DS_Store
 ._*
 .Spotlight-V100
@@ -18,3 +19,17 @@ pnpm-debug.log*
 *~
 
 *.[Pp][Dd][Ff]
+
+# Source / staging directories — never commit
+media-source/
+new-photos/
+source-materials/
+
+# Raw/design formats
+*.HEIC
+*.heic
+*.tif
+*.tiff
+*.ai
+*.indd
+*.psd
