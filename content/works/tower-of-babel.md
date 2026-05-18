@@ -4,10 +4,10 @@ slug: tower-of-babel
 num: 10
 year: 2026
 category: Art
-gallery: work-in-progress
+gallery: ceramic
 materials: Ceramic
 dimensions: '92" × 15" × 15"'
-status: work-in-progress
+status: complete
 thumbnail: assets/img/works/tower-of-babel/front-view-thumb.jpg
 primary_image: assets/img/works/tower-of-babel/front-view-web.jpg
 gallery_images:

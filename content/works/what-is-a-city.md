@@ -3,7 +3,7 @@ title: "What Is a City?"
 slug: what-is-a-city
 num: 11
 year: 2024
-category: Architecture
+category: Art
 gallery: wood
 materials: Wood
 dimensions: '48" × 36" × 8"'

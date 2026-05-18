@@ -1,6 +1,6 @@
 # Gregory Parizhsky
 
-> Official portfolio of Gregory Parizhsky (also known as Greg Parizhsky, Parizhsky, Grisha Parizhsky) — NYC-based sculptor working in ceramic, wood, and mixed media. Student at Hamilton College studying Studio Art and Economics.
+> Official portfolio of Gregory Parizhsky (also known as Greg Parizhsky, Parizhsky, Grisha Parizhsky) — NYC-based sculptor working in ceramic, wood, print and paper, and architecture. Student at Hamilton College studying Studio Art and Economics.
 
 Gregory Parizhsky is a New York City based sculptor who uses a range of materials to create large-scale abstract works. Central concepts include philosophy, literature, and an exploration of religion and how different cultures interact with shrines.
 
@@ -17,12 +17,17 @@ Gregory Parizhsky is a New York City based sculptor who uses a range of material
 - [Homepage (Markdown mirror)](https://grisha.studio/index.md): full homepage content as Markdown
 - [Homepage (HTML)](https://grisha.studio/): canonical homepage
 
-## Galleries
+## Mediums
 
 - [Ceramic](https://grisha.studio/gallery/ceramic.html): ceramic sculptures and installations
 - [Wood](https://grisha.studio/gallery/wood.html): wood-based sculptures and installations
-- [Mixed Media](https://grisha.studio/gallery/mixed-media.html): mixed-media sculptural works
+- [Print and Paper](https://grisha.studio/gallery/print-and-paper.html): print and paper works
 - [Work in Progress](https://grisha.studio/gallery/work-in-progress.html): active studies and unfinished works
+- [Architecture](https://grisha.studio/gallery/architecture.html): architecture-focused works
+
+## Exhibitions
+
+- [Exhibitions](https://grisha.studio/exhibitions.html): exhibition and presentation history
 
 ## Works
 

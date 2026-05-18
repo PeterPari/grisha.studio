@@ -4,10 +4,10 @@ slug: wishing-well
 num: 12
 year: 2026
 category: Art
-gallery: work-in-progress
+gallery: ceramic
 materials: Glazed Stoneware
 dimensions: '52" × 15" × 15"'
-status: work-in-progress
+status: complete
 thumbnail: assets/img/works/wishing-well/front-view-2-thumb.jpg
 primary_image: assets/img/works/wishing-well/front-view-web.jpg
 gallery_images:

@@ -11,7 +11,7 @@ rm -rf "$DIST"
 mkdir -p "$DIST"
 
 # Public files
-cp index.html "$DIST/"
+cp index.html exhibitions.html "$DIST/"
 cp favicon.* "$DIST/"
 cp robots.txt "$DIST/"
 cp sitemap.xml "$DIST/"

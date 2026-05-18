@@ -1,586 +1,738 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gregory Parizhsky — Sculptor | NYC Artist Portfolio</title>
-    <meta name="description" content="Official portfolio of Gregory (Greg) Parizhsky — NYC-based sculptor working in ceramic, wood, and mixed media. Hamilton College Studio Art & Economics student.">
-    <meta name="keywords" content="Gregory Parizhsky, Greg Parizhsky, Parizhsky, Gregory Parizhsky sculptor, Greg Parizhsky artist, NYC sculptor, ceramic sculpture, wood sculpture, Hamilton College artist, contemporary sculpture">
-    <meta name="author" content="Gregory Parizhsky">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="googlebot" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://grisha.studio/">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gregory Parizhsky — Sculptor | NYC Artist Portfolio</title>
+        <meta
+            name="description"
+            content="Official portfolio of Gregory (Greg) Parizhsky — NYC-based sculptor working in ceramic, wood, print and paper, and architecture. Hamilton College Studio Art & Economics student."
+        />
+        <meta
+            name="keywords"
+            content="Gregory Parizhsky, Greg Parizhsky, Parizhsky, Gregory Parizhsky sculptor, Greg Parizhsky artist, NYC sculptor, ceramic sculpture, wood sculpture, print and paper, architecture, Hamilton College artist, contemporary sculpture"
+        />
+        <meta name="author" content="Gregory Parizhsky" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-image-preview:large"
+        />
+        <link rel="canonical" href="https://grisha.studio/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Gregory Parizhsky">
-    <meta property="og:title" content="Gregory Parizhsky — Sculptor | NYC Artist Portfolio">
-    <meta property="og:description" content="Official portfolio of Gregory (Greg) Parizhsky — NYC-based sculptor working in ceramic, wood, and mixed media.">
-    <meta property="og:url" content="https://grisha.studio/">
-    <meta property="og:image" content="https://grisha.studio/assets/img/site/profile-photo.jpg">
-    <meta property="og:image:alt" content="Portrait of Gregory Parizhsky">
-    <meta property="og:locale" content="en_US">
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Gregory Parizhsky" />
+        <meta
+            property="og:title"
+            content="Gregory Parizhsky — Sculptor | NYC Artist Portfolio"
+        />
+        <meta
+            property="og:description"
+            content="Official portfolio of Gregory (Greg) Parizhsky — NYC-based sculptor working in ceramic, wood, print and paper, and architecture."
+        />
+        <meta property="og:url" content="https://grisha.studio/" />
+        <meta
+            property="og:image"
+            content="https://grisha.studio/assets/img/site/profile-photo.jpg"
+        />
+        <meta property="og:image:alt" content="Portrait of Gregory Parizhsky" />
+        <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gregory Parizhsky — Sculptor">
-    <meta name="twitter:description" content="NYC-based sculptor. Ceramic, wood, and mixed-media works by Gregory (Greg) Parizhsky.">
-    <meta name="twitter:image" content="https://grisha.studio/assets/img/site/profile-photo.jpg">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gregory Parizhsky — Sculptor" />
+        <meta
+            name="twitter:description"
+            content="NYC-based sculptor. Ceramic, wood, print and paper, and architecture works by Gregory (Greg) Parizhsky."
+        />
+        <meta
+            name="twitter:image"
+            content="https://grisha.studio/assets/img/site/profile-photo.jpg"
+        />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/site-loader.css">
-    <script src="./assets/js/site-loader.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/css/base.css" />
+        <link rel="stylesheet" href="./assets/css/site-loader.css" />
+        <script src="./assets/js/site-loader.js" defer></script>
 
-    <style>
-        /* ─────────────────────────────────────────────
+        <style>
+            /* ─────────────────────────────────────────────
            NAVIGATION (initial-load animation overrides)
         ───────────────────────────────────────────── */
-        .nav-mark {
-            opacity: 0;
-            animation: fadeDown 600ms 950ms var(--ease) forwards;
-        }
-        .nav-list {
-            opacity: 0;
-            animation: fadeDown 600ms 1050ms var(--ease) forwards;
-        }
+            .nav-mark {
+                opacity: 0;
+                animation: fadeDown 600ms 950ms var(--ease) forwards;
+            }
+            .nav-list {
+                opacity: 0;
+                animation: fadeDown 600ms 1050ms var(--ease) forwards;
+            }
 
-        /* ─────────────────────────────────────────────
+            /* ─────────────────────────────────────────────
            HERO
         ───────────────────────────────────────────── */
-        .hero {
-            position: relative;
-            z-index: 1;
-            min-height: 100svh;
-            min-height: 100dvh;
-            padding: 0 56px 88px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        .hero-texture {
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(135deg, rgba(48, 110, 65, 0.05), rgba(28, 39, 30, 0.01)),
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(28, 39, 30, 0.025) 0,
-                    rgba(28, 39, 30, 0.025) 1px,
-                    transparent 1px,
-                    transparent 22px
-                );
-            opacity: 1;
-            filter: none;
-        }
-        .hero-content { position: relative; z-index: 1; }
-        .hero-feature {
-            position: absolute;
-            top: 50%;
-            right: 91px;
-            transform: translateY(-50%);
-            width: clamp(240px, 28vw, 380px);
-            height: auto;
-            aspect-ratio: 5 / 7;
-            overflow: hidden;
-            pointer-events: none;
-            user-select: none;
-            z-index: 0;
-        }
-        .hero-feature img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 58% 48%;
-            transform: scale(1.10);
-            transform-origin: center;
-        }
-        .hero-name {
-            font-family: var(--sans);
-            font-size: clamp(24px, 8vw, 128px);
-            font-weight: 500;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            color: var(--text);
-            margin: 0;
-            white-space: nowrap;
-            display: block;
-            opacity: 0;
-            animation: fadeUp 900ms 1150ms var(--ease) forwards;
-        }
-        .hero-categories {
-            position: relative;
-            z-index: 1;
-            margin-top: 52px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 18px;
-            opacity: 0;
-            animation: fadeUp 700ms 1450ms var(--ease) forwards;
-        }
-        .hero-categories-label {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-        .hero-categories-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px 26px;
-        }
-        .hero-category-link {
-            display: inline-flex;
-            align-items: center;
-            min-height: 44px;
-            font-family: var(--sans);
-            font-size: clamp(16px, 2.3vw, 23px);
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            color: var(--text);
-            cursor: pointer;
-            text-decoration: none;
-            transition: color 250ms var(--ease);
-        }
-        .hero-category-link::after {
-            content: '→';
-            margin-left: 10px;
-            color: var(--accent);
-            transform: translateX(0);
-            transition: transform 250ms var(--ease), color 250ms var(--ease);
-        }
-        .hero-category-link:hover {
-            color: var(--accent);
-        }
-        .hero-category-link:hover::after,
-        .hero-category-link:focus-visible::after {
-            transform: translateX(4px);
-        }
-        .hero-category-link:focus-visible {
-            color: var(--accent);
-            outline: 2px solid rgba(48, 110, 65, 0.28);
-            outline-offset: 6px;
-        }
-        .hero-cue {
-            position: absolute;
-            bottom: 88px; right: 56px;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            opacity: 0;
-            animation: fadeIn 700ms 1700ms var(--ease) forwards;
-        }
-        /* ─────────────────────────────────────────────
-           SECTION SHARED
-        ───────────────────────────────────────────── */
-        .section {
-            position: relative;
-            z-index: 1;
-            padding: 128px 56px;
-            border-top: 1px solid var(--border);
-        }
-
-        /* ─────────────────────────────────────────────
-           ARTWORK CARD
-        ───────────────────────────────────────────── */
-        .card-img {
-            aspect-ratio: 3 / 4;
-            overflow: hidden;
-            background: var(--border);
-            margin-bottom: 14px;
-            position: relative;
-        }
-        .card-img.placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            background:
-                linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(221, 229, 221, 0.9));
-            border: 1px solid rgba(48, 110, 65, 0.08);
-        }
-        .placeholder-label {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--muted);
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        /* ─────────────────────────────────────────────
-           ABOUT
-        ───────────────────────────────────────────── */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 96px;
-            align-items: start;
-        }
-        .about-sticky {
-            position: sticky;
-            top: 120px;
-        }
-        .about-heading {
-            font-family: var(--serif);
-            font-size: clamp(44px, 5.5vw, 68px);
-            font-weight: 400;
-            letter-spacing: -0.025em;
-            line-height: 0.94;
-            margin-bottom: 36px;
-        }
-        .about-heading em {
-            font-style: italic;
-            color: var(--accent);
-        }
-        .about-rule {
-            width: 28px;
-            height: 1px;
-            background: var(--accent);
-            margin-bottom: 18px;
-        }
-        .about-sub {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-        .about-portrait {
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-        .about-portrait .card-img {
-            aspect-ratio: auto;
-            background: none;
-            margin-bottom: 0;
-        }
-        .about-portrait img {
-            width: 100%;
-            height: auto;
-            transition: transform 900ms var(--ease);
-        }
-        .about-portrait:hover img { transform: scale(1.03); }
-        .about-bio {
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.82;
-            color: var(--text);
-            max-width: 520px;
-        }
-        .about-bio p + p { margin-top: 24px; }
-        .about-bio p:first-child { font-size: 19px; line-height: 1.68; }
-
-        /* ─────────────────────────────────────────────
-           CONTACT
-        ───────────────────────────────────────────── */
-        .contact-inner {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .contact-eyebrow {
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 32px;
-        }
-        .contact-heading {
-            font-family: var(--serif);
-            font-size: clamp(40px, 5.5vw, 72px);
-            font-weight: 400;
-            letter-spacing: -0.025em;
-            line-height: 1.05;
-            color: var(--text);
-            max-width: 620px;
-            margin-bottom: 56px;
-        }
-        .contact-heading em {
-            font-style: italic;
-            color: var(--accent);
-        }
-        .contact-link {
-            font-family: var(--mono);
-            font-size: 14px;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            text-decoration: none;
-            padding-bottom: 4px;
-            border-bottom: 1px solid var(--border);
-            transition: border-color 300ms, letter-spacing 400ms var(--ease);
-        }
-        .contact-link:hover {
-            border-color: var(--accent);
-            letter-spacing: 0.13em;
-        }
-
-        /* ─────────────────────────────────────────────
-           KEYFRAMES
-        ───────────────────────────────────────────── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(22px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ─────────────────────────────────────────────
-           RESPONSIVE
-        ───────────────────────────────────────────── */
-        @media (max-width: 960px) {
-            #nav, .hero, .section { padding-left: 28px; padding-right: 28px; }
-            #nav {
-                padding-top: 22px;
-                padding-bottom: 18px;
-            }
-            .nav-list {
-                flex-wrap: wrap;
-                gap: 14px 18px;
+            .hero {
+                position: relative;
+                z-index: 1;
+                min-height: 100svh;
+                min-height: 100dvh;
+                padding: 0 56px 88px;
+                display: flex;
+                flex-direction: column;
                 justify-content: flex-end;
             }
-            .hero {
-                min-height: auto;
-                padding-top: 128px;
-                padding-bottom: 64px;
-                justify-content: flex-start;
-                gap: 24px;
+            .hero-texture {
+                position: absolute;
+                inset: 0;
+                background:
+                    linear-gradient(
+                        135deg,
+                        rgba(48, 110, 65, 0.05),
+                        rgba(28, 39, 30, 0.01)
+                    ),
+                    repeating-linear-gradient(
+                        0deg,
+                        rgba(28, 39, 30, 0.025) 0,
+                        rgba(28, 39, 30, 0.025) 1px,
+                        transparent 1px,
+                        transparent 22px
+                    );
+                opacity: 1;
+                filter: none;
             }
-            .section { padding-top: 88px; padding-bottom: 88px; }
-            .about-grid { grid-template-columns: 1fr; gap: 56px; }
-            .about-sticky { position: static; }
             .hero-content {
-                max-width: min(100%, 26rem);
-            }
-            .hero-name {
-                font-size: clamp(40px, 9.5vw, 72px);
-                line-height: 0.92;
-                letter-spacing: -0.045em;
+                position: relative;
+                z-index: 1;
             }
             .hero-feature {
-                position: static;
-                top: auto;
-                right: auto;
-                transform: none;
-                width: min(100%, 320px);
-                aspect-ratio: 4 / 5;
-                margin-top: 0;
-                align-self: flex-start;
+                position: absolute;
+                top: 50%;
+                right: 91px;
+                transform: translateY(-50%);
+                width: clamp(240px, 28vw, 380px);
+                height: auto;
+                aspect-ratio: 5 / 7;
+                overflow: hidden;
+                pointer-events: none;
+                user-select: none;
+                z-index: 0;
             }
             .hero-feature img {
-                object-position: 72% 48%;
-                transform: scale(1.03);
-            }
-            .hero-categories {
-                margin-top: 0;
-                gap: 12px;
-            }
-            .hero-cue { display: none; }
-        }
-        @media (max-width: 720px) {
-            #nav {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 12px;
-            }
-            .nav-list {
-                justify-content: flex-start;
-            }
-            .hero {
-                padding-top: 150px;
-                gap: 20px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 58% 48%;
+                transform: scale(1.1);
+                transform-origin: center;
             }
             .hero-name {
-                font-size: clamp(30px, 8.9vw, 44px);
-                letter-spacing: -0.05em;
+                font-family: var(--sans);
+                font-size: clamp(24px, 8vw, 128px);
+                font-weight: 500;
+                line-height: 0.95;
+                letter-spacing: -0.03em;
+                color: var(--text);
+                margin: 0;
+                white-space: nowrap;
+                display: block;
+                opacity: 0;
+                animation: fadeUp 900ms 1150ms var(--ease) forwards;
             }
-            .hero-feature {
-                width: min(100%, 300px);
-            }
-        }
-        @media (max-width: 600px) {
-            .hero-categories-links {
+            .hero-categories {
+                position: relative;
+                z-index: 1;
+                margin-top: 52px;
+                display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 10px;
+                gap: 18px;
+                opacity: 0;
+                animation: fadeUp 700ms 1450ms var(--ease) forwards;
             }
-        }
-    </style>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+            .hero-categories-label {
+                font-family: var(--mono);
+                font-size: 10px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: var(--muted);
+            }
+            .hero-categories-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px 26px;
+            }
+            .hero-category-link {
+                display: inline-flex;
+                align-items: center;
+                min-height: 44px;
+                font-family: var(--sans);
+                font-size: clamp(16px, 2.3vw, 23px);
+                font-weight: 400;
+                letter-spacing: -0.02em;
+                color: var(--text);
+                cursor: pointer;
+                text-decoration: none;
+                transition: color 250ms var(--ease);
+            }
+            .hero-category-link::after {
+                content: "→";
+                margin-left: 10px;
+                color: var(--accent);
+                transform: translateX(0);
+                transition:
+                    transform 250ms var(--ease),
+                    color 250ms var(--ease);
+            }
+            .hero-category-link:hover {
+                color: var(--accent);
+            }
+            .hero-category-link:hover::after,
+            .hero-category-link:focus-visible::after {
+                transform: translateX(4px);
+            }
+            .hero-category-link:focus-visible {
+                color: var(--accent);
+                outline: 2px solid rgba(48, 110, 65, 0.28);
+                outline-offset: 6px;
+            }
+            .hero-cue {
+                position: absolute;
+                bottom: 88px;
+                right: 56px;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                opacity: 0;
+                animation: fadeIn 700ms 1700ms var(--ease) forwards;
+            }
+            /* ─────────────────────────────────────────────
+           SECTION SHARED
+        ───────────────────────────────────────────── */
+            .section {
+                position: relative;
+                z-index: 1;
+                padding: 128px 56px;
+                border-top: 1px solid var(--border);
+            }
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Gregory Parizhsky",
-      "alternateName": ["Greg Parizhsky", "Parizhsky", "Grisha Parizhsky"],
-      "givenName": "Gregory",
-      "familyName": "Parizhsky",
-      "jobTitle": "Sculptor",
-      "description": "NYC-based sculptor working in ceramic, wood, and mixed media. Hamilton College student of Studio Art and Economics.",
-      "url": "https://grisha.studio/",
-      "image": "https://grisha.studio/assets/img/site/profile-photo.jpg",
-      "email": "mailto:gregory.parizhsky@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New York",
-        "addressRegion": "NY",
-        "addressCountry": "US"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Hamilton College"
-      },
-      "knowsAbout": ["Sculpture", "Ceramic art", "Wood sculpture", "Mixed media", "Contemporary art"]
-    }
-    </script>
+            /* ─────────────────────────────────────────────
+           ARTWORK CARD
+        ───────────────────────────────────────────── */
+            .card-img {
+                aspect-ratio: 3 / 4;
+                overflow: hidden;
+                background: var(--border);
+                margin-bottom: 14px;
+                position: relative;
+            }
+            .card-img.placeholder {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.8),
+                    rgba(221, 229, 221, 0.9)
+                );
+                border: 1px solid rgba(48, 110, 65, 0.08);
+            }
+            .placeholder-label {
+                font-family: var(--mono);
+                font-size: 10px;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--muted);
+                text-align: center;
+                line-height: 1.8;
+            }
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Gregory Parizhsky",
-      "alternateName": ["Greg Parizhsky", "Parizhsky Studio", "Grisha Studio"],
-      "url": "https://grisha.studio/",
-      "about": {
-        "@type": "Person",
-        "name": "Gregory Parizhsky"
-      }
-    }
-    </script>
-</head>
-<body>
+            /* ─────────────────────────────────────────────
+           ABOUT
+        ───────────────────────────────────────────── */
+            .about-grid {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                gap: 96px;
+                align-items: start;
+            }
+            .about-sticky {
+                position: sticky;
+                top: 120px;
+            }
+            .about-heading {
+                font-family: var(--serif);
+                font-size: clamp(44px, 5.5vw, 68px);
+                font-weight: 400;
+                letter-spacing: -0.025em;
+                line-height: 0.94;
+                margin-bottom: 36px;
+            }
+            .about-heading em {
+                font-style: italic;
+                color: var(--accent);
+            }
+            .about-rule {
+                width: 28px;
+                height: 1px;
+                background: var(--accent);
+                margin-bottom: 18px;
+            }
+            .about-sub {
+                font-family: var(--mono);
+                font-size: 10px;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--muted);
+            }
+            .about-portrait {
+                overflow: hidden;
+                margin-bottom: 40px;
+            }
+            .about-portrait .card-img {
+                aspect-ratio: auto;
+                background: none;
+                margin-bottom: 0;
+            }
+            .about-portrait img {
+                width: 100%;
+                height: auto;
+                transition: transform 900ms var(--ease);
+            }
+            .about-portrait:hover img {
+                transform: scale(1.03);
+            }
+            .about-bio {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.82;
+                color: var(--text);
+                max-width: 520px;
+            }
+            .about-bio p + p {
+                margin-top: 24px;
+            }
+            .about-bio p:first-child {
+                font-size: 19px;
+                line-height: 1.68;
+            }
 
-    <!-- Loader -->
-    <div id="loader" class="site-loader" aria-hidden="true"><p class="loader-mark">G · P</p></div>
+            /* ─────────────────────────────────────────────
+           CONTACT
+        ───────────────────────────────────────────── */
+            .contact-inner {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-eyebrow {
+                font-family: var(--mono);
+                font-size: 10px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin-bottom: 32px;
+            }
+            .contact-heading {
+                font-family: var(--serif);
+                font-size: clamp(40px, 5.5vw, 72px);
+                font-weight: 400;
+                letter-spacing: -0.025em;
+                line-height: 1.05;
+                color: var(--text);
+                max-width: 620px;
+                margin-bottom: 56px;
+            }
+            .contact-heading em {
+                font-style: italic;
+                color: var(--accent);
+            }
+            .contact-link {
+                font-family: var(--mono);
+                font-size: 14px;
+                letter-spacing: 0.08em;
+                color: var(--accent);
+                text-decoration: none;
+                padding-bottom: 4px;
+                border-bottom: 1px solid var(--border);
+                transition:
+                    border-color 300ms,
+                    letter-spacing 400ms var(--ease);
+            }
+            .contact-link:hover {
+                border-color: var(--accent);
+                letter-spacing: 0.13em;
+            }
 
-    <!-- Scroll progress bar -->
-    <div id="progress"></div>
+            /* ─────────────────────────────────────────────
+           KEYFRAMES
+        ───────────────────────────────────────────── */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(22px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes fadeDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-    <!-- Ambient -->
-    <div class="ambient"></div>
+            /* ─────────────────────────────────────────────
+           RESPONSIVE
+        ───────────────────────────────────────────── */
+            @media (max-width: 960px) {
+                #nav,
+                .hero,
+                .section {
+                    padding-left: 28px;
+                    padding-right: 28px;
+                }
+                #nav {
+                    padding-top: 22px;
+                    padding-bottom: 18px;
+                }
+                .nav-list {
+                    flex-wrap: wrap;
+                    gap: 14px 18px;
+                    justify-content: flex-end;
+                }
+                .hero {
+                    min-height: auto;
+                    padding-top: 128px;
+                    padding-bottom: 64px;
+                    justify-content: flex-start;
+                    gap: 24px;
+                }
+                .section {
+                    padding-top: 88px;
+                    padding-bottom: 88px;
+                }
+                .about-grid {
+                    grid-template-columns: 1fr;
+                    gap: 56px;
+                }
+                .about-sticky {
+                    position: static;
+                }
+                .hero-content {
+                    max-width: min(100%, 26rem);
+                }
+                .hero-name {
+                    font-size: clamp(40px, 9.5vw, 72px);
+                    line-height: 0.92;
+                    letter-spacing: -0.045em;
+                }
+                .hero-feature {
+                    position: static;
+                    top: auto;
+                    right: auto;
+                    transform: none;
+                    width: min(100%, 320px);
+                    aspect-ratio: 4 / 5;
+                    margin-top: 0;
+                    align-self: flex-start;
+                }
+                .hero-feature img {
+                    object-position: 72% 48%;
+                    transform: scale(1.03);
+                }
+                .hero-categories {
+                    margin-top: 0;
+                    gap: 12px;
+                }
+                .hero-cue {
+                    display: none;
+                }
+            }
+            @media (max-width: 720px) {
+                #nav {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+                .nav-list {
+                    justify-content: flex-start;
+                }
+                .hero {
+                    padding-top: 150px;
+                    gap: 20px;
+                }
+                .hero-name {
+                    font-size: clamp(30px, 8.9vw, 44px);
+                    letter-spacing: -0.05em;
+                }
+                .hero-feature {
+                    width: min(100%, 300px);
+                }
+            }
+            @media (max-width: 600px) {
+                .hero-categories-links {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+        </style>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- ─── NAVIGATION ─── -->
-    <nav id="nav">
-        <a href="./index.html" class="nav-mark">G · P</a>
-        <ul class="nav-list">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./gallery/ceramic.html">Galleries</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Gregory Parizhsky",
+                "alternateName": [
+                    "Greg Parizhsky",
+                    "Parizhsky",
+                    "Grisha Parizhsky"
+                ],
+                "givenName": "Gregory",
+                "familyName": "Parizhsky",
+                "jobTitle": "Sculptor",
+                "description": "NYC-based sculptor working in ceramic, wood, print and paper, and architecture. Hamilton College student of Studio Art and Economics.",
+                "url": "https://grisha.studio/",
+                "image": "https://grisha.studio/assets/img/site/profile-photo.jpg",
+                "email": "mailto:gregory.parizhsky@gmail.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "New York",
+                    "addressRegion": "NY",
+                    "addressCountry": "US"
+                },
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Hamilton College"
+                },
+                "knowsAbout": [
+                    "Sculpture",
+                    "Ceramic art",
+                    "Wood sculpture",
+                    "Print and paper",
+                    "Architecture",
+                    "Contemporary art"
+                ]
+            }
+        </script>
 
-    <!-- ─── HERO ─── -->
-    <section class="hero">
-        <div class="hero-texture"></div>
-
-        <div class="hero-content">
-            <h1 class="hero-name">Gregory Parizhsky</h1>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Gregory Parizhsky",
+                "alternateName": [
+                    "Greg Parizhsky",
+                    "Parizhsky Studio",
+                    "Grisha Studio"
+                ],
+                "url": "https://grisha.studio/",
+                "about": {
+                    "@type": "Person",
+                    "name": "Gregory Parizhsky"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Loader -->
+        <div id="loader" class="site-loader" aria-hidden="true">
+            <p class="loader-mark">G · P</p>
         </div>
 
-        <div class="hero-feature">
-            <img src="./assets/img/works/a-totemic-exploration-of-jazz/front-view-thumb.jpg" alt="A Totemic Exploration of Jazz" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high">
-        </div>
+        <!-- Scroll progress bar -->
+        <div id="progress"></div>
 
-        <nav class="hero-categories" aria-label="Browse works">
-            <span class="hero-categories-label">Browse works ↓</span>
-            <div class="hero-categories-links">
-                <a href="./gallery/ceramic.html" class="hero-category-link">Ceramic</a>
-                <a href="./gallery/wood.html" class="hero-category-link">Wood</a>
-                <a href="./gallery/mixed-media.html" class="hero-category-link">Mixed Media</a>
-                <a href="./gallery/work-in-progress.html" class="hero-category-link">Work in Progress</a>
-            </div>
+        <!-- Ambient -->
+        <div class="ambient"></div>
+
+        <!-- ─── NAVIGATION ─── -->
+        <a class="skip-link" href="#main">Skip to content</a>
+        <nav id="nav" aria-label="Primary">
+            <a href="./index.html" class="nav-mark">G · P</a>
+            <ul class="nav-list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./gallery/ceramic.html">Works</a></li>
+                <li><a href="./exhibitions.html">Exhibitions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
 
-        <div class="hero-cue">
-            <div class="cue-track"></div>
-            <span class="cue-label">Scroll</span>
-        </div>
-    </section>
+        <!-- ─── HERO ─── -->
+        <section id="main" class="hero">
+            <div class="hero-texture"></div>
 
-    <!-- ─── ABOUT ─── -->
-    <section class="section" id="about">
-        <div class="about-grid">
-
-            <div class="about-sticky reveal">
-                <h2 class="about-heading">About<br><em>the Artist</em></h2>
-                <div class="about-rule"></div>
-                <p class="about-sub">Biography</p>
+            <div class="hero-content">
+                <h1 class="hero-name">Gregory Parizhsky</h1>
             </div>
 
-            <div class="reveal" style="--d:140ms">
-                <div class="about-portrait">
-                    <div class="card-img">
-                        <img src="./assets/img/site/profile-photo.jpg" alt="Portrait of Gregory Parizhsky" width="1600" height="1061" loading="lazy" decoding="async">
+            <div class="hero-feature">
+                <img
+                    src="./assets/img/works/a-totemic-exploration-of-jazz/front-view-thumb.jpg"
+                    alt="A Totemic Exploration of Jazz"
+                    width="1200"
+                    height="800"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                />
+            </div>
+
+            <nav class="hero-categories" aria-label="Browse works">
+                <span class="hero-categories-label">Browse works ↓</span>
+                <div class="hero-categories-links">
+                    <a href="./gallery/ceramic.html" class="hero-category-link"
+                        >Ceramic</a
+                    >
+                    <a href="./gallery/wood.html" class="hero-category-link"
+                        >Wood</a
+                    >
+                    <a
+                        href="./gallery/print-and-paper.html"
+                        class="hero-category-link"
+                        >Print and Paper</a
+                    >
+                    <a
+                        href="./gallery/work-in-progress.html"
+                        class="hero-category-link"
+                        >Work in Progress</a
+                    >
+                    <a
+                        href="./gallery/architecture.html"
+                        class="hero-category-link"
+                        >Architecture</a
+                    >
+                </div>
+            </nav>
+
+            <div class="hero-cue">
+                <div class="cue-track"></div>
+                <span class="cue-label">Scroll</span>
+            </div>
+        </section>
+
+        <!-- ─── ABOUT ─── -->
+        <section class="section" id="about">
+            <div class="about-grid">
+                <div class="about-sticky reveal">
+                    <h2 class="about-heading">
+                        About<br /><em>the Artist</em>
+                    </h2>
+                    <div class="about-rule"></div>
+                    <p class="about-sub">Biography</p>
+                </div>
+
+                <div class="reveal" style="--d: 140ms">
+                    <div class="about-portrait">
+                        <div class="card-img">
+                            <img
+                                src="./assets/img/site/profile-photo.jpg"
+                                alt="Portrait of Gregory Parizhsky"
+                                width="1600"
+                                height="1061"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                    </div>
+                    <div class="about-bio">
+                        <p>
+                            Gregory Parizhsky (Greg Parizhsky) is an NYC based
+                            sculptor who utilizes a range of materials to create
+                            large scale abstract works. Central concepts to his
+                            practice include philosophy and literature, and
+                            recently, an exploration of religion and how
+                            different cultures interact with shrines. He is a
+                            student at Hamilton College studying Studio Art and
+                            Economics.
+                        </p>
                     </div>
                 </div>
-                <div class="about-bio">
-                    <p>Gregory Parizhsky (Greg Parizhsky) is an NYC based sculptor who utilizes a range of materials to create large scale abstract works. Central concepts to his practice include philosophy and literature, and recently, an exploration of religion and how different cultures interact with shrines. He is a student at Hamilton College studying Studio Art and Economics.</p>
-                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ─── CONTACT ─── -->
+        <section class="section" id="contact">
+            <div class="contact-inner">
+                <p class="contact-eyebrow reveal">Get in Touch</p>
+                <h2 class="contact-heading reveal" style="--d: 80ms">
+                    Contact Gregory<br /><em>by email</em>
+                </h2>
+                <a
+                    href="mailto:gregory.parizhsky@gmail.com"
+                    class="contact-link reveal"
+                    style="--d: 180ms"
+                >
+                    gregory.parizhsky@gmail.com
+                </a>
+            </div>
+        </section>
 
-    <!-- ─── CONTACT ─── -->
-    <section class="section" id="contact">
-        <div class="contact-inner">
-            <p class="contact-eyebrow reveal">Get in Touch</p>
-            <h2 class="contact-heading reveal" style="--d:80ms">Contact Gregory<br><em>by email</em></h2>
-            <a href="mailto:gregory.parizhsky@gmail.com" class="contact-link reveal" style="--d:180ms">
-                gregory.parizhsky@gmail.com
-            </a>
-        </div>
-    </section>
+        <!-- ─── FOOTER ─── -->
+        <footer>
+            <div class="footer-left"><span>Gregory Parizhsky</span><a href="https://www.instagram.com/grisha.studio/" class="footer-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div>
+            <span class="footer-meta"
+                ><a class="footer-credit" href="https://tech-savvies.com/"
+                    >Made by Tech-Savvvies</a
+                ><span>&copy; 2026</span></span
+            >
+        </footer>
 
-    <!-- ─── FOOTER ─── -->
-    <footer>
-        <span>Gregory Parizhsky</span>
-        <span class="footer-meta"><a class="footer-credit" href="https://tech-savvies.com/">Made by Tech-Savvvies</a><span>&copy; 2026</span></span>
-    </footer>
+        <script>
+            /* Scroll progress */
+            const prog = document.getElementById("progress");
+            const updateProgress = () => {
+                const pct =
+                    window.scrollY /
+                    (document.documentElement.scrollHeight -
+                        window.innerHeight);
+                prog.style.transform = `scaleX(${pct})`;
+            };
 
-    <script>
-        /* Scroll progress */
-        const prog = document.getElementById('progress');
-        const updateProgress = () => {
-            const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-            prog.style.transform = `scaleX(${pct})`;
-        };
+            /* Nav scroll state */
+            const nav = document.getElementById("nav");
+            const onScroll = () => {
+                nav.classList.toggle("scrolled", window.scrollY > 48);
+                updateProgress();
+            };
+            window.addEventListener("scroll", onScroll, { passive: true });
 
-        /* Nav scroll state */
-        const nav = document.getElementById('nav');
-        const onScroll = () => {
-            nav.classList.toggle('scrolled', window.scrollY > 48);
-            updateProgress();
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
+            /* Scroll reveal via IntersectionObserver */
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add("in");
+                            observer.unobserve(e.target);
+                        }
+                    });
+                },
+                { threshold: 0.07, rootMargin: "0px 0px -52px 0px" },
+            );
 
-        /* Scroll reveal via IntersectionObserver */
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('in');
-                    observer.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.07, rootMargin: '0px 0px -52px 0px' });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
-
-</body>
+            document
+                .querySelectorAll(".reveal")
+                .forEach((el) => observer.observe(el));
+        </script>
+    </body>
 </html>

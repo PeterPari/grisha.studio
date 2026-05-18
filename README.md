@@ -19,7 +19,7 @@ slug: slug-here
 num: 01           # display order
 year: 2024
 category: Art     # Art | Architecture
-gallery: ceramic  # ceramic | wood | work-in-progress
+gallery: ceramic  # ceramic | wood | print-and-paper | work-in-progress | architecture
 materials: "Ceramic"
 dimensions: '48" × 36" × 8"'
 status: complete  # complete | work-in-progress
@@ -45,7 +45,7 @@ Description text in Markdown.
 - `.detail-body .statement` ← description body
 - `<img src>` and `<a href>` on the lead figure ← `primary_image`
 - Gallery `<img src>` elements ← `gallery_images` (in order)
-- Gallery overview cards in `gallery/<gallery>.html` ← `thumbnail`
+- Medium overview cards in `gallery/<gallery>.html` ← `thumbnail`
 
 ### Other content files
 

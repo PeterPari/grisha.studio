@@ -12,8 +12,15 @@
 
 - [Ceramic](https://grisha.studio/gallery/ceramic.html)
 - [Wood](https://grisha.studio/gallery/wood.html)
-- [Mixed Media](https://grisha.studio/gallery/mixed-media.html)
+- [Print and Paper](https://grisha.studio/gallery/print-and-paper.html)
 - [Work in Progress](https://grisha.studio/gallery/work-in-progress.html)
+- [Architecture](https://grisha.studio/gallery/architecture.html)
+
+---
+
+## Exhibitions
+
+- [Exhibitions](https://grisha.studio/exhibitions.html)
 
 ---
 

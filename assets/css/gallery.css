@@ -1,17 +1,19 @@
 :root {
-    --bg: #F5F7F5;
-    --surface: #FFFFFF;
-    --text: #1C271E;
-    --muted: #6A7A6B;
+    --bg: #f5f7f5;
+    --surface: #ffffff;
+    --text: #1c271e;
+    --muted: #6a7a6b;
     --accent: #306e41;
-    --border: #DDE5DD;
-    --serif: 'Instrument Serif', Georgia, serif;
-    --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
-    --mono: 'DM Mono', 'SF Mono', monospace;
+    --border: #dde5dd;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "DM Sans", "Helvetica Neue", sans-serif;
+    --mono: "DM Mono", "SF Mono", monospace;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -40,27 +42,6 @@ a {
     color: inherit;
 }
 
-.skip-link {
-    position: absolute;
-    left: 24px;
-    top: 16px;
-    z-index: 200;
-    padding: 10px 14px;
-    background: var(--accent);
-    color: var(--bg);
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transform: translateY(-180%);
-    transition: transform 220ms var(--ease);
-}
-
-.skip-link:focus-visible {
-    transform: translateY(0);
-}
-
 .ambient {
     position: fixed;
     inset: 0;
@@ -69,30 +50,38 @@ a {
 }
 
 .ambient::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -12%;
     left: -5%;
     width: 48%;
     height: 48%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(50, 69, 55, 0.08) 0%, transparent 68%);
+    background: radial-gradient(
+        circle,
+        rgba(50, 69, 55, 0.08) 0%,
+        transparent 68%
+    );
     animation: none;
 }
 
 .ambient::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -8%;
     bottom: -10%;
     width: 42%;
     height: 42%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(50, 69, 55, 0.06) 0%, transparent 64%);
+    background: radial-gradient(
+        circle,
+        rgba(50, 69, 55, 0.06) 0%,
+        transparent 64%
+    );
     animation: none;
 }
 
-.site-nav {
+#nav {
     position: sticky;
     top: 0;
     z-index: 100;
@@ -105,6 +94,9 @@ a {
     border-bottom: 1px solid rgba(221, 229, 221, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    /* override base.css fixed positioning */
+    border-bottom-color: rgba(221, 229, 221, 0.92);
+    transition: none;
 }
 
 .nav-mark {
@@ -133,7 +125,9 @@ a {
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
-    transition: color 220ms var(--ease), border-color 220ms var(--ease);
+    transition:
+        color 220ms var(--ease),
+        border-color 220ms var(--ease);
 }
 
 .nav-list a:hover,
@@ -200,7 +194,11 @@ a {
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
-    transition: transform 220ms var(--ease), border-color 220ms var(--ease), color 220ms var(--ease), background 220ms var(--ease);
+    transition:
+        transform 220ms var(--ease),
+        border-color 220ms var(--ease),
+        color 220ms var(--ease),
+        background 220ms var(--ease);
 }
 
 .material-chip:hover,
@@ -276,9 +274,12 @@ a {
     height: var(--card-frame-height);
     margin: 0 auto 16px;
     padding: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(221, 229, 221, 0.92));
-    border: 1px solid rgba(28, 39, 30, 0.08);
-    box-shadow: inset 0 0 0 1px rgba(28, 39, 30, 0.05);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.84),
+        rgba(221, 229, 221, 0.92)
+    );
+    border: 2px solid #000;
 }
 
 .card-img img {
@@ -373,7 +374,11 @@ a {
     align-items: center;
     justify-content: center;
     padding: 28px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(221, 229, 221, 0.96));
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.88),
+        rgba(221, 229, 221, 0.96)
+    );
     border: 1px solid rgba(48, 110, 65, 0.08);
 }
 
@@ -387,48 +392,9 @@ a {
     line-height: 1.9;
 }
 
-footer {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 24px 56px 40px;
-    border-top: 1px solid var(--border);
-}
-
-footer span,
-footer a {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-}
-
-.footer-credit {
-    text-transform: none;
-}
-
-.footer-meta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-footer a:hover,
-footer a:focus-visible {
-    color: var(--accent);
-    outline: none;
-}
-
 @media (max-width: 960px) {
-    .site-nav,
-    .gallery-main,
-    footer {
+    #nav,
+    .gallery-main {
         padding-left: 28px;
         padding-right: 28px;
     }
@@ -449,14 +415,9 @@ footer a:focus-visible {
 }
 
 @media (max-width: 720px) {
-    .site-nav {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
     .nav-list {
         justify-content: flex-start;
-        gap: 12px 18px;
+        gap: 10px 18px;
     }
 
     .material-chip-row {
@@ -473,7 +434,9 @@ footer a:focus-visible {
         scroll-behavior: auto;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -483,13 +446,25 @@ footer a:focus-visible {
 /* ── Gallery tab transitions ──────────────────────────────── */
 
 @keyframes gallery-fade-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0);    }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes gallery-fade-out {
-    from { opacity: 1; transform: translateY(0);    }
-    to   { opacity: 0; transform: translateY(-8px); }
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
 }
 
 body.gallery-leaving .gallery-main {
