@@ -8,7 +8,7 @@ gallery: ceramic
 materials: Ceramic
 dimensions: '48" × 36" × 8"'
 status: complete
-thumbnail: assets/img/works/a-mycelium-mind/front-view-thumb.jpg
+thumbnail: assets/img/works/a-mycelium-mind/front-view-web.jpg
 primary_image: assets/img/works/a-mycelium-mind/front-view-web.jpg
 gallery_images:
   - assets/img/works/a-mycelium-mind/front-view-web.jpg

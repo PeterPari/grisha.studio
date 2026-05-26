@@ -8,7 +8,7 @@ gallery: ceramic
 materials: Ceramic
 dimensions: '23.5" × 15" × 9.5"'
 status: complete
-thumbnail: assets/img/works/icarus/front-view-thumb.jpg
+thumbnail: assets/img/works/icarus/front-view-web.jpg
 primary_image: assets/img/works/icarus/front-view-web.jpg
 gallery_images:
   - assets/img/works/icarus/front-view-web.jpg

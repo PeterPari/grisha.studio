@@ -3,7 +3,7 @@
 - [x] add new photos
 - [x] change WIP to no longer include the following pieces and put them in their categories: wishing well + Tower of Babel in ceramics. Wood gong to wood section
 - [x] Icarus print put all together in one work in print and paper. use the bird close up for the photo
-- [ ] Architecture projects into the print and paper file: the model the white one, shiny tea modeling, and the chair design proposal
+- [ ] Architecture projects in: the model the white one, shiny tea modeling, and the chair design proposal
 - [x] add "Artworks/Slip cast shoe and bottle for group show", include those in ceramic. Year: 2024
 - [x] Changed "Mixed Media" to "Print and Paper"
 - [x] Make a "Exhibitions" page
@@ -11,3 +11,8 @@
 - [x] Add a new "Archetecture" section
 - [x] Add instagram link
 - [ ] Add new descriptions
+- [ ] Add wellin exhibition and group show. As well as a ad thing for rhode island show
+- [x] remove marble works from WIP, hide WIP page.
+- [ ] Get photos for junior seminar exhibition
+- [ ] Get photos for ceramics group show.
+- [ ] Make photo on homepage cycle thru highlight works.

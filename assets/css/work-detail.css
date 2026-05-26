@@ -34,6 +34,14 @@ body { animation: pageIn 450ms var(--ease) both; }
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
     color: var(--muted); margin-top: 22px; display: block; line-height: 1.7;
 }
+.detail-exhibition {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-top: 10px; display: inline-block; text-decoration: none;
+    border-bottom: 1px solid var(--border); padding-bottom: 1px;
+    transition: color 200ms, border-color 200ms;
+}
+.detail-exhibition:hover { color: var(--accent); border-color: var(--accent); }
+
 .detail-cue {
     position: absolute;
     top: 50%;
@@ -120,10 +128,10 @@ body { animation: pageIn 450ms var(--ease) both; }
 }
 .gallery-count { color: var(--border); }
 .gallery-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px;
     max-width: 1320px; margin: 0 auto; align-items: start;
+    zoom: 0.9;
 }
-.gallery-grid.three { grid-template-columns: repeat(3, 1fr); }
 .g-span-2 { grid-column: span 2; }
 .gallery-row {
     display: grid; gap: 16px; align-items: start;
@@ -136,7 +144,7 @@ body { animation: pageIn 450ms var(--ease) both; }
 .gallery-row.rail-narrow { --row-max: 920px; }
 .gallery-row.rail-medium { --row-max: 1120px; }
 .gallery-row.rail-wide   { --row-max: 1320px; }
-.g-img { overflow: hidden; background: var(--border); }
+.g-img { overflow: hidden; border: 2px solid #000; }
 .g-img img {
     width: 100%; height: auto; display: block;
     transition: transform 900ms var(--ease);
@@ -179,10 +187,12 @@ body { animation: pageIn 450ms var(--ease) both; }
     .detail-body { padding: 56px 28px; grid-template-columns: 1fr; gap: 32px; }
     .body-label { position: static; }
     .detail-gallery { padding: 0 28px 88px; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gallery-grid.three { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .g-span-2 { grid-column: span 1; }
     .work-nav { padding: 40px 28px; }
+}
+@media (max-width: 720px) {
+    .gallery-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
     .detail-h1 { font-size: clamp(36px, 11vw, 56px); }

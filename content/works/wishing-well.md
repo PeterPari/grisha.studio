@@ -8,7 +8,7 @@ gallery: ceramic
 materials: Glazed Stoneware
 dimensions: '52" × 15" × 15"'
 status: complete
-thumbnail: assets/img/works/wishing-well/front-view-2-thumb.jpg
+thumbnail: assets/img/works/wishing-well/front-view-2-web.jpg
 primary_image: assets/img/works/wishing-well/front-view-web.jpg
 gallery_images:
   - assets/img/works/wishing-well/front-view-web.jpg

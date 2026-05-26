@@ -8,12 +8,12 @@ gallery: wood
 materials: "Wood, Pulleys, Rope, Helium Tank, Hammer"
 dimensions: '96" × 18" × 18"'
 status: complete
-thumbnail: assets/img/works/wood-gong/close-up-2-thumb.jpg
+thumbnail: assets/img/works/wood-gong/close-up-web.jpg
 primary_image: assets/img/works/wood-gong/front-view-web.jpg
 gallery_images:
   - assets/img/works/wood-gong/front-view-web.jpg
   - assets/img/works/wood-gong/close-up-web.jpg
-  - assets/img/works/wood-gong/close-up-2-web.jpg
+  - assets/img/works/wood-gong/close-up-web.jpg
 ---
 
 Part of a series on shrines for the final thesis exhibition at Hamilton College at the Wellin Museum of Art.

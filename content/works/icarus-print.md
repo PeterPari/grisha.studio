@@ -8,7 +8,7 @@ gallery: print-and-paper
 materials: "Print and Paper"
 dimensions: null
 status: complete
-thumbnail: assets/img/works/icarus-print/front-view-thumb.jpg
+thumbnail: assets/img/works/icarus-print/front-view-web.jpg
 primary_image: assets/img/works/icarus-print/front-view-web.jpg
 gallery_images:
   - assets/img/works/icarus-print/front-view-web.jpg

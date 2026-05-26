@@ -61,6 +61,21 @@
     let activeLink = null;
     let lastFocusedElement = null;
 
+    const activePointers = new Map();
+    let pinchStartDist = 0;
+    let pinchStartScale = 1;
+    let pinchStartTX = 0;
+    let pinchStartTY = 0;
+    let pinchMidViewX = 0;
+    let pinchMidViewY = 0;
+
+    const getPinchDist = () => {
+        const pts = [...activePointers.values()];
+        const dx = pts[1].x - pts[0].x;
+        const dy = pts[1].y - pts[0].y;
+        return Math.sqrt(dx * dx + dy * dy);
+    };
+
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
     const isOpen = () => overlay.classList.contains('is-open');
 
@@ -215,33 +230,65 @@
     });
 
     viewport.addEventListener('pointerdown', (event) => {
-        if (!isOpen() || scale <= minScale + 0.01 || event.button !== 0) {
-            return;
-        }
-        dragPointerId = event.pointerId;
-        dragStartX = event.clientX - translateX;
-        dragStartY = event.clientY - translateY;
-        viewport.classList.add('is-dragging');
+        if (!isOpen()) return;
+        activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
         viewport.setPointerCapture(event.pointerId);
+
+        if (activePointers.size === 2) {
+            pinchStartDist = getPinchDist();
+            pinchStartScale = scale;
+            pinchStartTX = translateX;
+            pinchStartTY = translateY;
+            const pts = [...activePointers.values()];
+            pinchMidViewX = (pts[0].x + pts[1].x) / 2;
+            pinchMidViewY = (pts[0].y + pts[1].y) / 2;
+            dragPointerId = null;
+            viewport.classList.remove('is-dragging');
+        } else if (activePointers.size === 1 && scale > minScale + 0.01 && event.button === 0) {
+            dragPointerId = event.pointerId;
+            dragStartX = event.clientX - translateX;
+            dragStartY = event.clientY - translateY;
+            viewport.classList.add('is-dragging');
+        }
     });
 
     viewport.addEventListener('pointermove', (event) => {
-        if (dragPointerId !== event.pointerId) {
-            return;
+        if (!activePointers.has(event.pointerId)) return;
+        activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+        if (activePointers.size === 2) {
+            const newDist = getPinchDist();
+            const newScale = clamp(pinchStartScale * (newDist / pinchStartDist), minScale, maxScale);
+            const vw = viewport.clientWidth;
+            const vh = viewport.clientHeight;
+            const canvasMidX = (pinchMidViewX - vw / 2 - pinchStartTX) / pinchStartScale;
+            const canvasMidY = (pinchMidViewY - vh / 2 - pinchStartTY) / pinchStartScale;
+            scale = newScale;
+            translateX = pinchMidViewX - vw / 2 - canvasMidX * newScale;
+            translateY = pinchMidViewY - vh / 2 - canvasMidY * newScale;
+            applyTransform();
+        } else if (dragPointerId === event.pointerId) {
+            translateX = event.clientX - dragStartX;
+            translateY = event.clientY - dragStartY;
+            applyTransform();
         }
-        translateX = event.clientX - dragStartX;
-        translateY = event.clientY - dragStartY;
-        applyTransform();
     });
 
     const releasePointer = (event) => {
-        if (dragPointerId !== event.pointerId) {
-            return;
-        }
+        activePointers.delete(event.pointerId);
         if (viewport.hasPointerCapture(event.pointerId)) {
             viewport.releasePointerCapture(event.pointerId);
         }
-        endDrag();
+        if (dragPointerId === event.pointerId) {
+            endDrag();
+        }
+        if (activePointers.size === 1 && scale > minScale + 0.01) {
+            const [id, pos] = [...activePointers.entries()][0];
+            dragPointerId = id;
+            dragStartX = pos.x - translateX;
+            dragStartY = pos.y - translateY;
+            viewport.classList.add('is-dragging');
+        }
     };
 
     viewport.addEventListener('pointerup', releasePointer);

@@ -53,8 +53,11 @@
                 document.documentElement.classList.add("gallery-tab-nav");
             }
         </script>
+        <script src="../assets/js/works-data.js"></script>
+        <script>window.WORKS_FILTER = { gallery: 'print-and-paper' };</script>
         <script src="../assets/js/site-loader.js" defer></script>
         <script src="../assets/js/gallery-tabs.js" defer></script>
+        <script src="../assets/js/gallery-render.js" defer></script>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
@@ -117,11 +120,6 @@
                                 aria-current="page"
                                 >Print and Paper</a
                             >
-                            <a
-                                href="./work-in-progress.html"
-                                class="material-chip"
-                                >Work in Progress</a
-                            >
                             <a href="./architecture.html" class="material-chip"
                                 >Architecture</a
                             >
@@ -140,28 +138,10 @@
                         id="print-paper-selection"
                         >Selected works</span
                     >
-                    <span class="gallery-count">01 work</span>
+                    <span class="gallery-count" id="gallery-count">01 work</span>
                 </div>
 
-                <div class="gallery-grid">
-                    <a href="../work/icarus-print.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/icarus-print/front-view-thumb.jpg"
-                                alt="Icarus Print"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">Icarus Print</p>
-                        <p class="card-meta">
-                            2025 &nbsp;·&nbsp; Print and Paper
-                        </p>
-                    </a>
-                </div>
+                <div class="gallery-grid" id="gallery-grid"></div>
             </section>
         </main>
 

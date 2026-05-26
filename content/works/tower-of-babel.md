@@ -8,8 +8,8 @@ gallery: ceramic
 materials: Ceramic
 dimensions: '92" × 15" × 15"'
 status: complete
-thumbnail: assets/img/works/tower-of-babel/front-view-thumb.jpg
-primary_image: assets/img/works/tower-of-babel/front-view-web.jpg
+thumbnail: assets/img/works/tower-of-babel/close-up-web.jpg
+primary_image: assets/img/works/tower-of-babel/close-up-web.jpg
 gallery_images:
   - assets/img/works/tower-of-babel/front-view-web.jpg
   - assets/img/works/tower-of-babel/side-view-web.jpg

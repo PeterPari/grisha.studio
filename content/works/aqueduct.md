@@ -8,7 +8,7 @@ gallery: ceramic
 materials: Ceramic
 dimensions: '9" × 18" × 4.5"'
 status: complete
-thumbnail: assets/img/works/aqueduct/front-view-thumb.jpg
+thumbnail: assets/img/works/aqueduct/front-view-web.jpg
 primary_image: assets/img/works/aqueduct/front-view-web.jpg
 gallery_images:
   - assets/img/works/aqueduct/front-view-web.jpg

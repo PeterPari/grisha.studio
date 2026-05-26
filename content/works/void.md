@@ -8,7 +8,7 @@ gallery: ceramic
 materials: Ceramic
 dimensions: '14.5" × 12" × 11"'
 status: complete
-thumbnail: assets/img/works/void/front-view-thumb.jpg
+thumbnail: assets/img/works/void/front-view-web.jpg
 primary_image: assets/img/works/void/front-view-web.jpg
 gallery_images:
   - assets/img/works/void/front-view-web.jpg

@@ -8,7 +8,7 @@ gallery: ceramic
 materials: "Ceramic, Steel Rod with Concrete Base"
 dimensions: null
 status: complete
-thumbnail: assets/img/works/a-totemic-exploration-of-jazz/front-view-thumb.jpg
+thumbnail: assets/img/works/a-totemic-exploration-of-jazz/front-view-web.jpg
 primary_image: assets/img/works/a-totemic-exploration-of-jazz/front-view-web.jpg
 gallery_images:
   - assets/img/works/a-totemic-exploration-of-jazz/front-view-web.jpg

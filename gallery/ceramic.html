@@ -50,8 +50,11 @@
                 document.documentElement.classList.add("gallery-tab-nav");
             }
         </script>
+        <script src="../assets/js/works-data.js"></script>
+        <script>window.WORKS_FILTER = { gallery: 'ceramic' };</script>
         <script src="../assets/js/site-loader.js" defer></script>
         <script src="../assets/js/gallery-tabs.js" defer></script>
+        <script src="../assets/js/gallery-render.js" defer></script>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
@@ -116,11 +119,6 @@
                                 class="material-chip"
                                 >Print and Paper</a
                             >
-                            <a
-                                href="./work-in-progress.html"
-                                class="material-chip"
-                                >Work in Progress</a
-                            >
                             <a href="./architecture.html" class="material-chip"
                                 >Architecture</a
                             >
@@ -137,187 +135,10 @@
                     <span class="gallery-section-label" id="ceramic-selection"
                         >Selected works</span
                     >
-                    <span class="gallery-count">09 works</span>
+                    <span class="gallery-count" id="gallery-count">09 works</span>
                 </div>
 
-                <div class="gallery-grid">
-                    <a
-                        href="../work/a-totemic-exploration-of-jazz.html"
-                        class="card"
-                    >
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/a-totemic-exploration-of-jazz/front-view-thumb.jpg"
-                                alt="A Totemic Exploration of Jazz"
-                                width="1200"
-                                height="800"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">A Totemic Exploration of Jazz</p>
-                        <p class="card-meta">
-                            2024 &nbsp;·&nbsp; Ceramic, Steel Rod with Concrete
-                            Base
-                        </p>
-                    </a>
-
-                    <a href="../work/a-mycelium-mind.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/a-mycelium-mind/close-up-left-close-web.jpg"
-                                alt="A Mycelium Mind"
-                                width="3200"
-                                height="2134"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">A Mycelium Mind</p>
-                        <p class="card-meta">
-                            2024 &nbsp;·&nbsp; Ceramic<br />48&quot; &times;
-                            36&quot; &times; 8&quot;
-                        </p>
-                    </a>
-
-                    <a href="../work/icarus.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/icarus/front-view-thumb.jpg"
-                                alt="Icarus"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">Icarus</p>
-                        <p class="card-meta">
-                            2025 &nbsp;·&nbsp; Ceramic<br />23.5&quot; &times;
-                            15&quot; &times; 9.5&quot;
-                        </p>
-                    </a>
-
-                    <a href="../work/void.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/void/front-view-thumb.jpg"
-                                alt="Void"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">Void</p>
-                        <p class="card-meta">
-                            2025 &nbsp;·&nbsp; Ceramic<br />14.5&quot; &times;
-                            12&quot; &times; 11&quot;
-                        </p>
-                    </a>
-
-                    <a href="../work/aqueduct.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/aqueduct/front-view-thumb.jpg"
-                                alt="Aqueduct"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">Aqueduct</p>
-                        <p class="card-meta">
-                            2025 &nbsp;·&nbsp; Ceramic<br />9&quot; &times;
-                            18&quot; &times; 4.5&quot;
-                        </p>
-                    </a>
-
-                    <a href="../work/hydrant.html" class="card">
-                        <div class="card-img">
-                            <img
-                                class="crop-up-40"
-                                src="../assets/img/works/hydrant/front-view-thumb.jpg"
-                                alt="Hydrant"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">Hydrant</p>
-                        <p class="card-meta">
-                            2025 &nbsp;·&nbsp; Ceramic<br />22.5&quot; &times;
-                            12.5&quot; &times; 11&quot;
-                        </p>
-                    </a>
-
-                    <a href="../work/tower-of-babel.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/tower-of-babel/front-view-thumb.jpg"
-                                alt="Tower of Babel"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">Tower of Babel</p>
-                        <p class="card-meta">
-                            2026 &nbsp;·&nbsp; Ceramic<br />92&quot; &times;
-                            15&quot; &times; 15&quot;
-                        </p>
-                    </a>
-
-                    <a href="../work/wishing-well.html" class="card">
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/wishing-well/front-view-thumb.jpg"
-                                alt="The Wishing Well"
-                                width="900"
-                                height="675"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">The Wishing Well</p>
-                        <p class="card-meta">
-                            2026 &nbsp;·&nbsp; Glazed Stoneware<br />52&quot;
-                            &times; 15&quot; &times; 15&quot;
-                        </p>
-                    </a>
-
-                    <a
-                        href="../work/slip-cast-shoe-and-bottle-for-group-show.html"
-                        class="card"
-                    >
-                        <div class="card-img">
-                            <img
-                                src="../assets/img/works/slip-cast-shoe-and-bottle-for-group-show/front-view-thumb.jpg"
-                                alt="Slip Cast Shoe and Bottle for Group Show"
-                                width="1200"
-                                height="900"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="card-bar"></div>
-                        </div>
-                        <p class="card-title">
-                            Slip Cast Shoe and Bottle for Group Show
-                        </p>
-                        <p class="card-meta">2024 &nbsp;·&nbsp; Ceramic</p>
-                    </a>
-                </div>
+                <div class="gallery-grid" id="gallery-grid"></div>
             </section>
         </main>
 

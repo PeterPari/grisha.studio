@@ -8,7 +8,7 @@ gallery: wood
 materials: Wood
 dimensions: '48" × 36" × 8"'
 status: complete
-thumbnail: assets/img/works/what-is-a-city/front-view-thumb.jpg
+thumbnail: assets/img/works/what-is-a-city/front-view-web.jpg
 primary_image: assets/img/works/what-is-a-city/front-view-web.jpg
 gallery_images:
   - assets/img/works/what-is-a-city/front-view-web.jpg

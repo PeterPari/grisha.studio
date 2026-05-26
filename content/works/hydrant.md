@@ -8,7 +8,7 @@ gallery: ceramic
 materials: Ceramic
 dimensions: '22.5" × 12.5" × 11"'
 status: complete
-thumbnail: assets/img/works/hydrant/front-view-thumb.jpg
+thumbnail: assets/img/works/hydrant/front-view-web.jpg
 primary_image: assets/img/works/hydrant/front-view-web.jpg
 gallery_images:
   - assets/img/works/hydrant/front-view-web.jpg

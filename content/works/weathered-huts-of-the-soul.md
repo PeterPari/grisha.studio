@@ -8,7 +8,7 @@ gallery: wood
 materials: "Concrete, Burnt Wood"
 dimensions: '96" × 23.5" × 23.5" / 72" × 23.5" × 23.5"'
 status: complete
-thumbnail: assets/img/works/weathered-huts-of-the-soul/single-tower-front-view-thumb.jpg
+thumbnail: assets/img/works/weathered-huts-of-the-soul/single-tower-front-view-web.jpg
 primary_image: assets/img/works/weathered-huts-of-the-soul/both-towers-web.jpg
 gallery_images:
   - assets/img/works/weathered-huts-of-the-soul/both-towers-web.jpg
