@@ -16,7 +16,7 @@ cp favicon.* "$DIST/"
 cp robots.txt "$DIST/"
 cp sitemap.xml "$DIST/"
 cp llms.txt "$DIST/"
-cp -R assets gallery work "$DIST/"
+cp -R assets exhibitions gallery work "$DIST/"
 
 # Strip local metadata that must not be published
 find "$DIST" -name '.DS_Store' -delete
