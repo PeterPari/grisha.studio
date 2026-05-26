@@ -15,4 +15,6 @@
 - [x] remove marble works from WIP, hide WIP page.
 - [ ] Get photos for junior seminar exhibition
 - [ ] Get photos for ceramics group show.
-- [ ] Make photo on homepage cycle thru highlight works.
+- [x] Make photo on homepage cycle thru highlight works.
+- [ ] Fix mobile
+- [ ] Photos cycle name like mobile eerrrror
