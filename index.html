@@ -124,12 +124,19 @@
                 z-index: 0;
             }
             .hero-feature img {
+                position: absolute;
+                inset: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: 58% 48%;
                 transform: scale(1.1);
                 transform-origin: center;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+            .hero-feature img.active {
+                opacity: 1;
             }
             .hero-name {
                 font-family: var(--sans);
@@ -586,16 +593,15 @@
                 <h1 class="hero-name">Gregory Parizhsky</h1>
             </div>
 
-            <div class="hero-feature">
-                <img
-                    src="./assets/img/works/a-totemic-exploration-of-jazz/front-view-web.jpg"
-                    alt="A Totemic Exploration of Jazz"
-                    width="1200"
-                    height="800"
-                    loading="eager"
-                    decoding="async"
-                    fetchpriority="high"
-                />
+            <div class="hero-feature" aria-hidden="true">
+                <img src="./assets/img/works/tower-of-babel/front-view-web.jpg" alt="" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high" class="active" />
+                <img src="./assets/img/works/wishing-well/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="./assets/img/works/wood-gong/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="./assets/img/works/smokestack/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="./assets/img/works/figure-drawing-final/full-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="./assets/img/works/full-scale-figure/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="./assets/img/works/totems/all-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="./assets/img/works/hydrant/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
             </div>
 
             <nav class="hero-categories" aria-label="Browse works">
@@ -728,6 +734,17 @@
             document
                 .querySelectorAll(".reveal")
                 .forEach((el) => observer.observe(el));
+
+            /* Hero carousel */
+            const heroSlides = document.querySelectorAll(".hero-feature img");
+            let heroIdx = 0;
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                setInterval(() => {
+                    heroSlides[heroIdx].classList.remove("active");
+                    heroIdx = (heroIdx + 1) % heroSlides.length;
+                    heroSlides[heroIdx].classList.add("active");
+                }, 4000);
+            }
         </script>
     </body>
 </html>
