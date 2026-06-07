@@ -169,3 +169,17 @@ body { animation: pageIn 450ms var(--ease) both; }
 @media (max-width: 600px) {
     .exh-h1 { font-size: clamp(36px, 11vw, 56px); }
 }
+
+/* ─────────────────────────────────────────────
+   EXHIBITION HERO (poster)
+───────────────────────────────────────────── */
+.exh-hero {
+    position: relative; z-index: 1;
+    padding: 44px 56px 0; max-width: 1320px; margin: 0 auto;
+}
+.exh-hero .image-zoom-link { display: block; }
+.exh-hero img {
+    width: 100%; max-height: 82vh; object-fit: contain;
+    border: 2px solid #000; background: var(--surface); display: block;
+}
+@media (max-width: 960px) { .exh-hero { padding: 32px 28px 0; } }
