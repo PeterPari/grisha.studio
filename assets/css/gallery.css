@@ -280,6 +280,11 @@ a {
     transition: transform 700ms var(--ease);
 }
 
+.card-img img.drawing {
+    object-fit: contain;
+    background: #fff;
+}
+
 .card-bar {
     position: absolute;
     left: 0;

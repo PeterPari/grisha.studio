@@ -24,6 +24,7 @@ pnpm-debug.log*
 media-source/
 new-photos/
 source-materials/
+Architecture Material/
 
 # Raw/design formats
 *.HEIC

@@ -50,8 +50,11 @@
                 document.documentElement.classList.add("gallery-tab-nav");
             }
         </script>
+        <script src="../assets/js/works-data.js"></script>
+        <script>window.WORKS_FILTER = { gallery: 'architecture' };</script>
         <script src="../assets/js/site-loader.js" defer></script>
         <script src="../assets/js/gallery-tabs.js" defer></script>
+        <script src="../assets/js/gallery-render.js" defer></script>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
@@ -134,14 +137,10 @@
                         id="architecture-selection"
                         >Selected works</span
                     >
-                    <span class="gallery-count">Coming soon</span>
+                    <span class="gallery-count" id="gallery-count">05 works</span>
                 </div>
 
-                <div class="gallery-grid single-column">
-                    <p class="card-meta">
-                        Architecture projects will be added here.
-                    </p>
-                </div>
+                <div class="gallery-grid" id="gallery-grid"></div>
             </section>
         </main>
 

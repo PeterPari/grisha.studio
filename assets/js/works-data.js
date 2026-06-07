@@ -214,5 +214,65 @@ window.WORKS = [
     status: "complete",
     thumbnail: "assets/img/works/totems/all-view-web.jpg",
     imgClass: null
+  },
+  {
+    title: "Shiny Tea Store",
+    slug: "shiny-tea-store",
+    num: 23,
+    year: 2024,
+    gallery: "architecture",
+    materials: "Architectural drawings · Columbia GSAPP",
+    dimensions: null,
+    status: "complete",
+    thumbnail: "assets/img/works/shiny-tea-store/isometric-web.jpg",
+    imgClass: "drawing"
+  },
+  {
+    title: "Hidden Layers",
+    slug: "hidden-layers",
+    num: 22,
+    year: 2024,
+    gallery: "architecture",
+    materials: "Physical model · Object study",
+    dimensions: null,
+    status: "complete",
+    thumbnail: "assets/img/works/hidden-layers/front-view-web.jpg",
+    imgClass: null
+  },
+  {
+    title: "Harlem Pier — The Riverside Shed",
+    slug: "harlem-pier",
+    num: 21,
+    year: 2024,
+    gallery: "architecture",
+    materials: "Architectural drawings & renders · Harlem Pier",
+    dimensions: null,
+    status: "complete",
+    thumbnail: "assets/img/works/harlem-pier/render-1-web.jpg",
+    imgClass: null
+  },
+  {
+    title: "Ribs Modular Chair",
+    slug: "ribs-modular-chair",
+    num: 20,
+    year: 2024,
+    gallery: "architecture",
+    materials: "Furniture design · Modular seating",
+    dimensions: null,
+    status: "complete",
+    thumbnail: "assets/img/works/ribs-modular-chair/render-web.jpg",
+    imgClass: null
+  },
+  {
+    title: "The Chasm Cafe",
+    slug: "chasm-cafe",
+    num: 19,
+    year: 2024,
+    gallery: "architecture",
+    materials: "Architectural design · Cafe concept",
+    dimensions: null,
+    status: "complete",
+    thumbnail: "assets/img/works/chasm-cafe/exterior-web.jpg",
+    imgClass: null
   }
 ];
