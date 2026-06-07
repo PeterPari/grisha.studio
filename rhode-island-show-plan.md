@@ -1,7 +1,9 @@
-# Build Plan — Add the upcoming "Rhode Island Show" announcement to Exhibitions
+# Build Plan — Add the upcoming "America, Unfinished?!" (WaterFire, Providence RI) announcement to Exhibitions
 
 **For:** Claude Code, executing in the repo root `/Users/peterp/Projects/grisha.studio`.
-**Goal:** Add an **upcoming-show announcement** for a June 2026 exhibition in Rhode Island. This is intentionally **different** from the past exhibitions: it is an ad/announcement, **not** a documented show — so **no installation photos, no works-shown grid, no poster**. It is a distinct banner at the top of `exhibitions.html` linking to a minimal placeholder detail page that can be fleshed out later. Follow steps verbatim.
+**Goal:** Add an **upcoming-show announcement** for the Rhode Island exhibition Gregory Parizhsky is part of. Real details are now confirmed (source: WaterFire Arts Center event page). It remains an **ad/announcement**, not a documented show — the show opens July 2, 2026, so there are **no installation photos yet**. It is a distinct banner at the top of `exhibitions.html` linking to a placeholder detail page that can be upgraded once the show is up. Follow steps verbatim.
+
+> **Supersedes the earlier placeholder.** The show was provisionally called "Rhode Island Show" / "June 2026." Confirmed details below replace that: real title, **July 2 – August 30, 2026**, WaterFire Arts Center. The page **slug changes to `america-unfinished`**.
 
 ---
 
@@ -9,23 +11,26 @@
 
 | Field | Value |
 |---|---|
-| Slug | `rhode-island-show` |
-| Title | Rhode Island Show (placeholder name) |
-| Type | Upcoming Exhibition |
-| Date (display) | June 2026 |
-| Date (machine) | `2026-06` |
-| Venue | To be announced (Rhode Island) |
-| Treatment | **Announcement banner** at top of `exhibitions.html` (no image) + minimal placeholder detail page |
-| Images | **None** — by design |
-| Past-shows list | Banner sits **above** the historical list; the Rhode Island show is **not** added as a normal thumbnail row |
+| Slug | `america-unfinished` |
+| Title | America, Unfinished?! |
+| Type | Upcoming Group Exhibition |
+| Dates (display) | July 2 – August 30, 2026 |
+| Dates (machine) | start `2026-07-02`, end `2026-08-30` |
+| Opening night | July 2, 2026 · 5:00–9:00 PM |
+| Venue | WaterFire Arts Center, Main Hall — 475 Valley Street, Providence, RI 02908 |
+| Organizer | WaterFire Providence |
+| Official event page | https://waterfire.org/events/america-unfinished/ |
+| Treatment | **Announcement banner** at top of `exhibitions.html` (no image) + placeholder detail page |
+| Installation images | **None** — show is upcoming |
+| Past-shows list | Banner sits **above** the historical list; not added as a normal thumbnail row |
 
-Everything is placeholder; the user will supply real title, exact dates, venue, and works later.
+Still to confirm later: exactly which of Greg's works will be on view, and the full artist roster.
 
 ---
 
-## Step 1 — Create the placeholder detail page
+## Step 1 — Create the detail page
 
-Create `exhibitions/rhode-island-show.html` with **exactly** this content. It reuses the existing `exhibition-detail.css` classes (`exh-header`, `exh-meta-*`, `exh-desc`) and deliberately omits the gallery and works-shown sections. No new CSS file is needed for this page.
+Create `exhibitions/america-unfinished.html` with **exactly** this content. It reuses existing `exhibition-detail.css` classes (`exh-header`, `exh-meta-*`, `exh-desc`) and omits the gallery and works-shown sections. No new CSS file needed.
 
 ```html
 <!DOCTYPE html>
@@ -33,22 +38,22 @@ Create `exhibitions/rhode-island-show.html` with **exactly** this content. It re
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhode Island Show — Gregory Parizhsky</title>
-    <meta name="description" content="Rhode Island Show — an upcoming exhibition featuring work by Gregory (Greg) Parizhsky, June 2026. Details to be announced.">
-    <meta name="keywords" content="Gregory Parizhsky, Greg Parizhsky, Parizhsky, Rhode Island Show, upcoming exhibition, sculpture">
+    <title>America, Unfinished?! — Gregory Parizhsky</title>
+    <meta name="description" content="America, Unfinished?! — an upcoming group exhibition at the WaterFire Arts Center, Providence, RI, July 2 – August 30, 2026, featuring work by Gregory (Greg) Parizhsky.">
+    <meta name="keywords" content="Gregory Parizhsky, Greg Parizhsky, Parizhsky, America Unfinished, WaterFire Arts Center, Providence, Rhode Island, upcoming exhibition, sculpture">
     <meta name="author" content="Gregory Parizhsky">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://grisha.studio/exhibitions/rhode-island-show.html">
+    <link rel="canonical" href="https://grisha.studio/exhibitions/america-unfinished.html">
 
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gregory Parizhsky">
-    <meta property="og:title" content="Rhode Island Show — Gregory Parizhsky">
-    <meta property="og:description" content="An upcoming exhibition featuring work by Gregory Parizhsky, June 2026. Details to be announced.">
-    <meta property="og:url" content="https://grisha.studio/exhibitions/rhode-island-show.html">
+    <meta property="og:title" content="America, Unfinished?! — Gregory Parizhsky">
+    <meta property="og:description" content="Upcoming group exhibition at the WaterFire Arts Center, Providence, RI, July 2 – August 30, 2026.">
+    <meta property="og:url" content="https://grisha.studio/exhibitions/america-unfinished.html">
     <meta property="og:image" content="https://grisha.studio/assets/img/site/profile-photo.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rhode Island Show — Gregory Parizhsky">
-    <meta name="twitter:description" content="An upcoming exhibition featuring work by Gregory Parizhsky, June 2026. Details to be announced.">
+    <meta name="twitter:title" content="America, Unfinished?! — Gregory Parizhsky">
+    <meta name="twitter:description" content="Upcoming group exhibition at the WaterFire Arts Center, Providence, RI, July 2 – August 30, 2026.">
     <meta name="twitter:image" content="https://grisha.studio/assets/img/site/profile-photo.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,23 +72,36 @@ Create `exhibitions/rhode-island-show.html` with **exactly** this content. It re
     {
       "@context": "https://schema.org",
       "@type": "ExhibitionEvent",
-      "name": "Rhode Island Show",
-      "url": "https://grisha.studio/exhibitions/rhode-island-show.html",
-      "startDate": "2026-06",
+      "name": "America, Unfinished?!",
+      "url": "https://grisha.studio/exhibitions/america-unfinished.html",
+      "startDate": "2026-07-02",
+      "endDate": "2026-08-30",
       "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "To be announced",
+        "name": "WaterFire Arts Center",
         "address": {
           "@type": "PostalAddress",
-          "addressRegion": "RI"
+          "streetAddress": "475 Valley Street",
+          "addressLocality": "Providence",
+          "addressRegion": "RI",
+          "postalCode": "02908"
         }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "WaterFire Providence",
+        "url": "https://waterfire.org/"
       },
       "performer": {
         "@type": "Person",
         "name": "Gregory Parizhsky",
         "alternateName": ["Greg Parizhsky", "Parizhsky"],
         "url": "https://grisha.studio/"
+      },
+      "subjectOf": {
+        "@type": "WebPage",
+        "url": "https://waterfire.org/events/america-unfinished/"
       }
     }
     </script>
@@ -114,21 +132,25 @@ Create `exhibitions/rhode-island-show.html` with **exactly** this content. It re
     <header class="exh-header reveal">
         <div class="exh-header-left">
             <div class="exh-meta-row">
-                <span class="exh-type">Upcoming Exhibition</span>
+                <span class="exh-type">Upcoming Group Exhibition</span>
                 <span>—</span>
-                <span>June 2026</span>
+                <span>Summer 2026</span>
             </div>
-            <h1 class="exh-h1">Rhode Island Show</h1>
+            <h1 class="exh-h1">America, Unfinished?!</h1>
         </div>
         <div class="exh-header-right reveal" style="--d:60ms">
             <div class="exh-meta-block">
                 <div class="exh-meta-item">
-                    <span class="exh-meta-key">Date</span>
-                    <span class="exh-meta-val">June 2026</span>
+                    <span class="exh-meta-key">Dates</span>
+                    <span class="exh-meta-val">July 2 – August 30, 2026</span>
+                </div>
+                <div class="exh-meta-item">
+                    <span class="exh-meta-key">Opening</span>
+                    <span class="exh-meta-val">July 2, 2026 · 5–9 PM</span>
                 </div>
                 <div class="exh-meta-item">
                     <span class="exh-meta-key">Venue</span>
-                    <span class="exh-meta-val">To be announced · Rhode Island</span>
+                    <span class="exh-meta-val">WaterFire Arts Center, 475 Valley Street, Providence, RI</span>
                 </div>
             </div>
         </div>
@@ -137,8 +159,9 @@ Create `exhibitions/rhode-island-show.html` with **exactly** this content. It re
     <section class="exh-desc reveal" style="--d:40ms" aria-label="Announcement">
         <div class="exh-desc-label">Announcement</div>
         <div class="exh-desc-body">
-            <p>An exhibition of work by Gregory Parizhsky is coming to Rhode Island in June 2026.</p>
-            <p>Full details — exact dates, venue, and the works on view — will be announced here soon. Follow along on <a href="https://www.instagram.com/grisha.studio/" target="_blank" rel="noopener noreferrer">Instagram</a> for updates.</p>
+            <p><em>America, Unfinished?!</em> is a large-scale contemporary art exhibition at the WaterFire Arts Center in Providence, Rhode Island, on view July 2 – August 30, 2026. Staged across the Center's 15,000-square-foot Main Hall, it brings together artists from across the country to explore the complexities, contradictions, and possibilities of the American experience — themes of identity, democracy, belonging, memory, and justice — through immersive installations and large-scale work.</p>
+            <p>Gregory Parizhsky's sculpture will be featured among the exhibiting artists. Opening night is July 2, 2026, from 5 to 9 PM.</p>
+            <p>Full details and the complete artist list are on the <a href="https://waterfire.org/events/america-unfinished/" target="_blank" rel="noopener noreferrer">WaterFire Arts Center event page</a>. Follow along on <a href="https://www.instagram.com/grisha.studio/" target="_blank" rel="noopener noreferrer">Instagram</a> for updates.</p>
         </div>
     </section>
 
@@ -170,7 +193,7 @@ Create `exhibitions/rhode-island-show.html` with **exactly** this content. It re
 
 This page keeps its CSS in an inline `<style>` block. Two edits:
 
-**2a. Add banner CSS.** In `exhibitions.html`, find the closing `</style>` tag in `<head>` and insert the following **immediately before** it:
+**2a. Add banner CSS.** Find the closing `</style>` tag in `<head>` and insert this **immediately before** it:
 
 ```css
         /* Upcoming-show announcement banner */
@@ -237,62 +260,69 @@ This page keeps its CSS in an inline `<style>` block. Two edits:
         <h1 class="page-title">Exhibitions</h1>
 ```
 
-Insert the following **immediately after** it (so the banner appears between the page title and the historical exhibition list):
+Insert this **immediately after** it:
 
 ```html
 
-        <a class="exh-announce" href="./exhibitions/rhode-island-show.html">
+        <a class="exh-announce" href="./exhibitions/america-unfinished.html">
             <span class="exh-announce-tag">Upcoming</span>
-            <h2 class="exh-announce-title">Rhode Island Show</h2>
-            <p class="exh-announce-meta">June 2026 · Rhode Island · Details to come</p>
+            <h2 class="exh-announce-title">America, Unfinished?!</h2>
+            <p class="exh-announce-meta">July 2 – Aug 30, 2026 · WaterFire Arts Center · Providence, RI</p>
             <span class="exh-announce-cue">Read announcement →</span>
         </a>
 ```
 
-Do **not** add a normal `<article class="exhibition-item">` row for this show — it stays a banner, separate from the documented past shows below.
+Do **not** add a normal `<article class="exhibition-item">` row for this show — it stays a banner, above the documented past shows.
 
 ---
 
 ## Step 3 — SEO files
 
-In `sitemap.xml`, add a `<url>` block near the existing `exhibitions.html` entry, and bump that entry's `lastmod` to `2026-06-06`:
+In `sitemap.xml`, add a `<url>` block near the existing `exhibitions.html` entry and bump that entry's `lastmod` to `2026-06-06`:
 
 ```xml
   <url>
-    <loc>https://grisha.studio/exhibitions/rhode-island-show.html</loc>
+    <loc>https://grisha.studio/exhibitions/america-unfinished.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 ```
 
-(`changefreq` is `weekly` here since this is a live announcement that will change as details firm up.) Then check `llms.txt`: if it lists exhibition pages, add a "Rhode Island Show (upcoming)" line in the same format; otherwise leave it.
+Then check `llms.txt`: if it lists exhibition pages, add an "America, Unfinished?! (upcoming, WaterFire Arts Center, Providence RI)" line in the same format; otherwise leave it.
 
 ---
 
 ## Step 4 — Build, verify, commit
 
-1. **Build:** `bash scripts/build-site.sh` (copies `exhibitions/` and `exhibitions.html` into `site-dist/`).
+1. **Build:** `bash scripts/build-site.sh`.
 2. **Serve & check** (`python3 -m http.server` from repo root):
-   - `/exhibitions.html` — the "Upcoming / Rhode Island Show / June 2026" banner appears directly under the page title, with an accent border, above the Fire on the Hill and Advanced Ceramics rows. Hover changes the title to the accent color and widens the cue spacing. Clicking opens the detail page.
-   - `/exhibitions/rhode-island-show.html` — header with "Upcoming Exhibition — June 2026", title, Date/Venue meta (venue = "To be announced · Rhode Island"), and the Announcement section. **No** gallery, **no** works-shown, **no** broken images. Back link returns to Exhibitions.
+   - `/exhibitions.html` — the "Upcoming / America, Unfinished?! / July 2 – Aug 30, 2026" banner appears under the page title, accent-bordered, above the Fire on the Hill and Advanced Ceramics rows; hover animates; clicking opens the detail page.
+   - `/exhibitions/america-unfinished.html` — header ("Upcoming Group Exhibition — Summer 2026"), Dates/Opening/Venue meta, and the Announcement text with working links to the WaterFire event page and Instagram. **No** gallery, **no** works-shown, **no** broken images.
    - No console 404s.
-3. **Commit:** `git add -A && git commit -m "Add upcoming Rhode Island Show announcement to Exhibitions"` then push (Netlify auto-deploys).
+3. **Commit:** `git add -A && git commit -m "Add upcoming America, Unfinished?! (WaterFire, Providence) announcement"` then push.
 
 ---
 
 ## Acceptance criteria
 
-- [ ] `exhibitions/rhode-island-show.html` exists: header + Announcement only, zero images, zero gallery/works sections.
-- [ ] `exhibitions.html` shows the accent-bordered "Upcoming" banner above the historical list, linking to the detail page.
+- [ ] `exhibitions/america-unfinished.html` exists: header + Announcement only, zero images, zero gallery/works sections, real dates/venue/links.
+- [ ] `exhibitions.html` shows the accent-bordered "Upcoming" banner (real title + dates + venue) above the historical list, linking to the detail page.
 - [ ] The show is **not** present as a standard thumbnail row.
 - [ ] `sitemap.xml` includes the new URL; site builds clean; commit pushed.
 
 ---
 
-## Follow-up (when real details arrive)
+## Optional enhancement — use the official event image
 
-When the show's title, dates, venue, and works are confirmed, this can be upgraded to a full documented exhibition using the **Fire on the Hill plan as the template**:
-- Replace placeholder copy in the detail page (title, dates, venue, About text).
-- Add an installation/poster gallery and a "Works Shown" grid (copy those sections from `exhibitions/fire-on-the-hill.html`).
-- Once the show has taken place, optionally retire the top banner and add a normal thumbnail `<article>` row to the historical list instead.
+The event has an official promo image: `https://waterfire.org/wp-content/uploads/2026/05/America-Unfinished-Website-scaled.jpg` (2560×1440). If the user wants the announcement to carry it (it would make the banner more ad-like), do this **only with the user's go-ahead** (it's WaterFire's image — use for promoting the same event, with credit):
+
+1. Download to `assets/img/exhibitions/america-unfinished/poster-web.jpg` (resize to 1600 px longest edge, `sips -Z 1600 -s formatOptions 82`) and a `poster-thumb.jpg` (500 px).
+2. On the detail page, add an `.exh-hero` section after `</header>` (reuse the `.exh-hero` CSS from the Fire on the Hill plan, or add it to `exhibition-detail.css`) showing `poster-web.jpg`, with a caption line *"Image courtesy of WaterFire Providence."*
+3. Optionally set the page's `og:image`/`twitter:image` to the local `poster-web.jpg`.
+
+Default plan keeps it **text-only**, per the original "ad/announcement, no pictures" direction.
+
+## Follow-up (once the show is up / has run)
+
+Upgrade to a full documented exhibition using the **Fire on the Hill plan as the template**: add real installation photos in a gallery, a "Works Shown" grid of Greg's pieces in the show, and finalize the About copy with the confirmed artist list. Once the show has taken place, optionally retire the top banner and add a normal thumbnail `<article>` row to the historical list.
