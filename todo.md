@@ -12,7 +12,7 @@
 - [x] Add a new "Archetecture" section
 - [x] Add instagram link
 - [ ] Add new descriptions
-- [ ] Add wellin exhibition and group show. As well as a ad thing for rhode island show
+- [x] Add wellin exhibition and group show. As well as a ad thing for rhode island show
 - [x] remove marble works from WIP, hide WIP page.
 - [ ] Get photos for junior seminar exhibition
 - [ ] Get photos for ceramics group show.
