@@ -499,6 +499,17 @@
                     gap: 10px;
                 }
             }
+            /* MOBILE HERO READABILITY — light halo so black text stays legible over the photo */
+            @media (max-width: 960px) {
+                .hero-name,
+                .hero-categories-label,
+                .hero-category-link {
+                    text-shadow:
+                        0 0 2px rgba(255, 255, 255, 0.95),
+                        0 0 10px rgba(255, 255, 255, 0.78),
+                        0 1px 2px rgba(255, 255, 255, 0.85);
+                }
+            }
         </style>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
@@ -600,7 +611,7 @@
                 <img src="./assets/img/works/smokestack/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
                 <img src="./assets/img/works/hydrant/front-view-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
                 <img src="./assets/img/works/weathered-huts-of-the-soul/both-towers-web.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
-                <img src="./assets/img/works/harlem-pier/render-1-web.jpg" alt="" width="1600" height="1035" loading="lazy" decoding="async" style="object-position: 50% 50%;" />
+
             </div>
 
             <nav class="hero-categories" aria-label="Browse works">
