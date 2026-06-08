@@ -11,11 +11,11 @@
 - [x] Change "Galleries" to "Mediums"
 - [x] Add a new "Archetecture" section
 - [x] Add instagram link
-- [ ] Add new descriptions
 - [x] Add wellin exhibition and group show. As well as a ad thing for rhode island show
 - [x] remove marble works from WIP, hide WIP page.
-- [ ] Get photos for junior seminar exhibition
-- [ ] Get photos for ceramics group show.
+- [x] Get photos for junior seminar exhibition
+- [x] Get photos for ceramics group show.
 - [x] Make photo on homepage cycle thru highlight works.
-- [ ] Fix mobile
-- [ ] Photos cycle name like mobile eerrrror
+- [x] Fix mobile
+- [ ] Add new descriptions
+- [ ] Audit site to make sure everything is ready for publish. Check if any placeholder text, or any other content that needs to be updated.

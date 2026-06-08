@@ -25,6 +25,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://grisha.studio/exhibitions/advanced-ceramics-group-show.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://grisha.studio/gallery/ceramic.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -41,12 +47,6 @@
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://grisha.studio/gallery/work-in-progress.html</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grisha.studio/gallery/architecture.html</loc>
@@ -159,6 +159,36 @@
   <url>
     <loc>https://grisha.studio/work/wood-gong.html</loc>
     <lastmod>2026-04-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://grisha.studio/work/totems.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://grisha.studio/work/figure-drawing-final.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://grisha.studio/work/full-scale-figure.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://grisha.studio/work/icarus-print.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://grisha.studio/work/slip-cast-shoe-and-bottle-for-group-show.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
