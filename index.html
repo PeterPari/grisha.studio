@@ -548,6 +548,33 @@
                 .hero-category-link:hover,
                 .hero-category-link:focus-visible { color: var(--accent); }
             }
+            /* MOBILE NAV — lighter green so it reads over the dark magazine hero photo */
+            @media (max-width: 960px) {
+                #nav .nav-mark,
+                #nav .nav-list a {
+                    color: #85d19c;
+                    text-shadow:
+                        0 0 2px rgba(0, 0, 0, 0.45),
+                        0 1px 3px rgba(0, 0, 0, 0.5);
+                }
+                #nav .nav-list a:hover,
+                #nav .nav-list a:focus-visible {
+                    color: #fff;
+                }
+                /* Once scrolled past the hero the frosted light bar returns — restore dark ink */
+                #nav.scrolled .nav-mark {
+                    color: var(--accent);
+                    text-shadow: none;
+                }
+                #nav.scrolled .nav-list a {
+                    color: var(--muted);
+                    text-shadow: none;
+                }
+                #nav.scrolled .nav-list a:hover,
+                #nav.scrolled .nav-list a:focus-visible {
+                    color: var(--accent);
+                }
+            }
         </style>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
