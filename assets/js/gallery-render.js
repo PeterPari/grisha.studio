@@ -1,9 +1,9 @@
 (function () {
   var filter = window.WORKS_FILTER || {};
   var LABELS = {
+    stone: 'Stone',
     ceramic: 'Ceramic',
     wood: 'Wood',
-    stone: 'Stone',
     'print-and-paper': 'Print and Paper'
   };
 
