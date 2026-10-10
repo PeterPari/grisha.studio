@@ -3,9 +3,9 @@ title: "Hidden Layers"
 slug: hidden-layers
 num: 22
 year: 2024
-category: Architecture
-gallery: architecture
-materials: "Physical model · Object study, 1/6\" scale"
+category: Art
+gallery: print-and-paper
+materials: "Print and Paper"
 dimensions: null
 status: complete
 thumbnail: assets/img/works/hidden-layers/front-view-web.jpg

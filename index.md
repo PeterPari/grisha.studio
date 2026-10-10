@@ -14,7 +14,6 @@
 - [Wood](https://grisha.studio/gallery/wood.html)
 - [Print and Paper](https://grisha.studio/gallery/print-and-paper.html)
 - [Work in Progress](https://grisha.studio/gallery/work-in-progress.html)
-- [Architecture](https://grisha.studio/gallery/architecture.html)
 
 ---
 

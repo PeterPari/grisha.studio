@@ -2,7 +2,7 @@
   var filter = window.WORKS_FILTER || {};
   var works = (window.WORKS || []).filter(function (w) {
     if (filter.status) return w.status === filter.status;
-    return w.gallery === filter.gallery && w.status !== 'work-in-progress';
+    return w.gallery === filter.gallery && w.status !== 'work-in-progress' && w.status !== 'archived';
   });
 
   works.sort(function (a, b) {
