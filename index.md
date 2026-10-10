@@ -27,7 +27,7 @@
 
 ## About the Artist
 
-Gregory Parizhsky (Greg Parizhsky) is an NYC based sculptor who utilizes a range of materials to create large scale abstract works. Central concepts to his practice include philosophy and literature, and recently, an exploration of religion and how different cultures interact with shrines. He is a student at Hamilton College studying Studio Art and Economics.
+Gregory Parizhsky (Greg Parizhsky) is an NYC based sculptor who utilizes a range of materials to create large scale abstract works. Central concepts to his practice include philosophy and literature, and recently, an exploration of religion and how different cultures interact with shrines. He is currently working as a sculptor.
 
 ---
 
