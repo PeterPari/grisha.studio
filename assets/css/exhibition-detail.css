@@ -106,7 +106,6 @@ body { animation: pageIn 450ms var(--ease) both; }
     width: 100%; height: auto; display: block;
     transition: transform 900ms var(--ease);
 }
-.g-img:hover img { transform: scale(1.04); }
 .image-zoom-link {
     position: relative; display: block; width: 100%;
     text-decoration: none; cursor: zoom-in;

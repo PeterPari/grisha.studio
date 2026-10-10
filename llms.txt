@@ -19,6 +19,7 @@ Gregory Parizhsky is a New York City based sculptor who uses a range of material
 
 ## Mediums
 
+- [All works](https://grisha.studio/gallery/works.html): every work, newest first, filterable by medium
 - [Ceramic](https://grisha.studio/gallery/ceramic.html): ceramic sculptures and installations
 - [Wood](https://grisha.studio/gallery/wood.html): wood-based sculptures and installations
 - [Stone](https://grisha.studio/gallery/stone.html): stone sculptures

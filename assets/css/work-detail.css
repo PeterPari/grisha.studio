@@ -83,10 +83,6 @@ body { animation: pageIn 450ms var(--ease) both; }
     width: 100%; max-width: none; height: auto; display: block;
     transition: transform 900ms var(--ease);
 }
-.detail-lead .image-zoom-link:hover img,
-.detail-lead .image-zoom-link:focus-visible img {
-    transform: scale(1.015);
-}
 
 /* ─────────────────────────────────────────────
    DETAIL BODY (statement + label)
@@ -149,7 +145,6 @@ body { animation: pageIn 450ms var(--ease) both; }
     width: 100%; height: auto; display: block;
     transition: transform 900ms var(--ease);
 }
-.g-img:hover img { transform: scale(1.04); }
 .g-img.placeholder {
     display: flex; align-items: center; justify-content: center;
     aspect-ratio: 4 / 3;

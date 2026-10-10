@@ -90,7 +90,7 @@
             <a href="../index.html" class="nav-mark">G · P</a>
             <ul class="nav-list">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="./ceramic.html">Works</a></li>
+                <li><a href="./works.html">Works</a></li>
                 <li><a href="../exhibitions.html">Exhibitions</a></li>
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
@@ -98,43 +98,18 @@
         </nav>
 
         <main id="main" class="gallery-main">
-            <header class="gallery-hero">
-                <p class="gallery-kicker">Browse works</p>
-                <div class="gallery-hero-grid">
-                    <div>
-                        <h1 class="gallery-title">Architecture</h1>
-                        <div
-                            class="material-chip-row"
-                            aria-label="Work sections"
-                        >
-                            <a href="./ceramic.html" class="material-chip"
-                                >Ceramic</a
-                            >
-                            <a href="./wood.html" class="material-chip">Wood</a>
-                            <a href="./stone.html" class="material-chip">Stone</a>
-                            <a
-                                href="./print-and-paper.html"
-                                class="material-chip"
-                                >Print and Paper</a
-                            >
-                        </div>
-                    </div>
-                </div>
+            <header class="works-head">
+                <h1 class="gallery-title">Architecture</h1>
+                <nav class="work-tabs" aria-label="Works by medium">
+                    <a href="./works.html" class="material-chip">Latest</a>
+                    <a href="./ceramic.html" class="material-chip">Ceramic</a>
+                    <a href="./wood.html" class="material-chip">Wood</a>
+                    <a href="./stone.html" class="material-chip">Stone</a>
+                    <a href="./print-and-paper.html" class="material-chip">Print and Paper</a>
+                </nav>
             </header>
 
-            <section
-                class="gallery-section"
-                aria-labelledby="architecture-selection"
-            >
-                <div class="gallery-section-head">
-                    <span
-                        class="gallery-section-label"
-                        id="architecture-selection"
-                        >Selected works</span
-                    >
-                    <span class="gallery-count" id="gallery-count">05 works</span>
-                </div>
-
+            <section class="gallery-section" aria-label="Architecture works">
                 <div class="gallery-grid" id="gallery-grid"></div>
             </section>
         </main>

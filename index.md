@@ -10,6 +10,7 @@
 
 ## Browse Works
 
+- [All works](https://grisha.studio/gallery/works.html)
 - [Ceramic](https://grisha.studio/gallery/ceramic.html)
 - [Wood](https://grisha.studio/gallery/wood.html)
 - [Stone](https://grisha.studio/gallery/stone.html)

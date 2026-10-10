@@ -35,6 +35,10 @@ Description text in Markdown.
 
 **Edit facts here first** — title, year, materials, dimensions, description, and image references all live in these files.
 
+### Works hub
+
+`gallery/works.html` lists every non-archived, non-WIP work (architecture excluded) newest first (`year`, then `num`). The "Latest" tab shows everything; the medium tabs filter in place (`#ceramic`, `#wood`, …). It is rendered from `assets/js/works-data.js` by `assets/js/gallery-render.js`, so adding an entry to `works-data.js` is enough for it to appear.
+
 ### Keeping HTML pages in sync
 
 `work/<slug>.html` is the **render layer**. After editing a content file, update the matching HTML page to reflect the changes:
