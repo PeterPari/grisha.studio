@@ -82,6 +82,27 @@ body { animation: pageIn 450ms var(--ease) both; }
 }
 .exh-desc-body p + p { margin-top: 22px; }
 .exh-desc-body em { font-style: italic; }
+.exh-desc-body a {
+    text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+    transition: color 200ms;
+}
+.exh-desc-body a:hover { color: var(--accent); }
+.exh-desc-body a { position: relative; }
+.work-peek {
+    position: absolute; left: 50%; bottom: calc(100% + 14px); z-index: 50;
+    width: 120px; transform: translate(-50%, 6px);
+    border: 2px solid #000; background: var(--surface); overflow: hidden;
+    opacity: 0; pointer-events: none;
+    transition: opacity 200ms, transform 300ms var(--ease);
+}
+.work-peek img { width: 100%; height: auto; display: block; }
+@media (hover: hover) and (pointer: fine) {
+    .exh-desc-body a:hover .work-peek,
+    .exh-desc-body a:focus-visible .work-peek {
+        opacity: 1; transform: translate(-50%, 0);
+    }
+}
+@media (max-width: 960px) { .work-peek { display: none; } }
 
 /* ─────────────────────────────────────────────
    EXHIBITION GALLERY (installation / venue photos)
@@ -182,3 +203,29 @@ body { animation: pageIn 450ms var(--ease) both; }
     border: 2px solid #000; background: var(--surface); display: block;
 }
 @media (max-width: 960px) { .exh-hero { padding: 32px 28px 0; } }
+
+/* ─────────────────────────────────────────────
+   POSTER + ABOUT — side by side (about left, poster right)
+───────────────────────────────────────────── */
+.exh-top {
+    position: relative; z-index: 1;
+    max-width: 1320px; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px;
+    align-items: start;
+    padding: 44px 56px 88px; border-bottom: 1px solid var(--border);
+}
+.exh-top .exh-desc {
+    grid-column: 1; grid-row: 1;
+    padding: 0; border: 0; grid-template-columns: 1fr; gap: 28px;
+}
+.exh-top .exh-desc-label { position: static; }
+.exh-top .exh-desc-body { max-width: none; }
+.exh-top .exh-hero {
+    grid-column: 2; grid-row: 1;
+    padding: 0; max-width: none; margin: 0;
+}
+@media (max-width: 960px) {
+    .exh-top { grid-template-columns: 1fr; gap: 40px; padding: 32px 28px 56px; }
+    .exh-top .exh-desc,
+    .exh-top .exh-hero { grid-column: 1; grid-row: auto; }
+}
