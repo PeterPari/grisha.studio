@@ -45,6 +45,15 @@ body.site-loader-active {
     }
 }
 
+/* Loader already shown once this session */
+html.loader-seen .site-loader {
+    display: none;
+}
+
+html.loader-seen body.site-loader-active {
+    overflow: auto;
+}
+
 /* Hide loader immediately when navigating between gallery tabs */
 html.gallery-tab-nav .site-loader {
     display: none;

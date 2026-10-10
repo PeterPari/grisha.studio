@@ -9,10 +9,21 @@
         return;
     }
 
+    // Loader only plays once per session
+    if (document.documentElement.classList.contains('loader-seen')) {
+        const seenLoader = document.getElementById('loader');
+        if (seenLoader) seenLoader.remove();
+        return;
+    }
+
     const body = document.body;
     if (!body) {
         return;
     }
+
+    try {
+        sessionStorage.setItem('site-loader-seen', '1');
+    } catch (e) {}
 
     let loader = document.getElementById('loader');
     if (!loader) {
