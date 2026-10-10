@@ -1,6 +1,6 @@
 # Gregory Parizhsky
 
-> Official portfolio of Gregory Parizhsky (also known as Greg Parizhsky, Parizhsky, Grisha Parizhsky) — NYC-based sculptor working in ceramic, wood, and print and paper. Student at Hamilton College studying Studio Art and Economics.
+> Official portfolio of Gregory Parizhsky (also known as Greg Parizhsky, Parizhsky, Grisha Parizhsky) — NYC-based sculptor working in ceramic, wood, stone, and print and paper. Student at Hamilton College studying Studio Art and Economics.
 
 Gregory Parizhsky is a New York City based sculptor who uses a range of materials to create large-scale abstract works. Central concepts include philosophy, literature, and an exploration of religion and how different cultures interact with shrines.
 
@@ -21,6 +21,7 @@ Gregory Parizhsky is a New York City based sculptor who uses a range of material
 
 - [Ceramic](https://grisha.studio/gallery/ceramic.html): ceramic sculptures and installations
 - [Wood](https://grisha.studio/gallery/wood.html): wood-based sculptures and installations
+- [Stone](https://grisha.studio/gallery/stone.html): stone sculptures
 - [Print and Paper](https://grisha.studio/gallery/print-and-paper.html): print and paper works
 - [Work in Progress](https://grisha.studio/gallery/work-in-progress.html): active studies and unfinished works
 
@@ -44,6 +45,9 @@ Gregory Parizhsky is a New York City based sculptor who uses a range of material
 - [Wishing Well](https://grisha.studio/work/wishing-well.html)
 - [Wood Gong](https://grisha.studio/work/wood-gong.html)
 - [Hidden Layers](https://grisha.studio/work/hidden-layers.html)
+- [Night Talker 1](https://grisha.studio/work/night-talker-1.html)
+- [Night Talker 2](https://grisha.studio/work/night-talker-2.html)
+- [Reclining Nude](https://grisha.studio/work/reclining-nude.html)
 
 ## Optional
 

@@ -19,7 +19,7 @@ slug: slug-here
 num: 01           # display order
 year: 2024
 category: Art     # Art | Architecture
-gallery: ceramic  # ceramic | wood | print-and-paper | work-in-progress | architecture (architecture section currently hidden)
+gallery: ceramic  # ceramic | wood | stone | print-and-paper | work-in-progress | architecture (architecture section currently hidden)
 materials: "Ceramic"
 dimensions: '48" × 36" × 8"'
 status: complete  # complete | work-in-progress | archived (hidden from gallery, page noindex)

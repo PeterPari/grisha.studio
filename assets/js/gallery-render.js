@@ -32,10 +32,15 @@
     var dimPart = w.dimensions ? '<br />' + w.dimensions : '';
     return (
       '<a href="../work/' + esc(w.slug) + '.html" class="card">\n' +
-      '  <div class="card-img">\n' +
-      '    <img' + imgClass + ' src="../' + esc(w.thumbnail) + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async" />\n' +
-      '    <div class="card-bar"></div>\n' +
-      '  </div>\n' +
+      (w.thumbnail
+        ? '  <div class="card-img">\n' +
+          '    <img' + imgClass + ' src="../' + esc(w.thumbnail) + '" alt="' + esc(w.title) + '" loading="lazy" decoding="async" />\n' +
+          '    <div class="card-bar"></div>\n' +
+          '  </div>\n'
+        : '  <div class="card-img placeholder">\n' +
+          '    <span class="placeholder-label">Photo coming soon</span>\n' +
+          '    <div class="card-bar"></div>\n' +
+          '  </div>\n') +
       '  <p class="card-title">' + w.title + '</p>\n' +
       '  <p class="card-meta">' + w.year + ' &nbsp;&middot;&nbsp; ' + w.materials + wipBadge + dimPart + '</p>\n' +
       '</a>'

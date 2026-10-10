@@ -150,6 +150,15 @@ body { animation: pageIn 450ms var(--ease) both; }
     transition: transform 900ms var(--ease);
 }
 .g-img:hover img { transform: scale(1.04); }
+.g-img.placeholder {
+    display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(221,229,221,0.96));
+}
+.g-img.placeholder .placeholder-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); text-align: center;
+}
 .ar-3-4 { aspect-ratio: auto; }
 .ar-4-3 { aspect-ratio: auto; }
 .ar-1-1 { aspect-ratio: auto; }

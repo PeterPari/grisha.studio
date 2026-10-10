@@ -1,5 +1,41 @@
 window.WORKS = [
   {
+    title: "Night Talker 1",
+    slug: "night-talker-1",
+    num: 26,
+    year: 2026,
+    gallery: "stone",
+    materials: "Stone",
+    dimensions: null,
+    status: "complete",
+    thumbnail: null,
+    imgClass: null
+  },
+  {
+    title: "Night Talker 2",
+    slug: "night-talker-2",
+    num: 25,
+    year: 2026,
+    gallery: "stone",
+    materials: "Stone",
+    dimensions: null,
+    status: "complete",
+    thumbnail: null,
+    imgClass: null
+  },
+  {
+    title: "Reclining Nude",
+    slug: "reclining-nude",
+    num: 24,
+    year: 2026,
+    gallery: "stone",
+    materials: "Stone",
+    dimensions: null,
+    status: "complete",
+    thumbnail: null,
+    imgClass: null
+  },
+  {
     title: "Tower of Babel",
     slug: "tower-of-babel",
     num: 10,

@@ -25,6 +25,9 @@
     },
     "what-is-a-city": { href: "../gallery/wood.html", label: "Wood" },
     "wood-gong": { href: "../gallery/wood.html", label: "Wood" },
+    "night-talker-1": { href: "../gallery/stone.html", label: "Stone" },
+    "night-talker-2": { href: "../gallery/stone.html", label: "Stone" },
+    "reclining-nude": { href: "../gallery/stone.html", label: "Stone" },
     "icarus-print": {
       href: "../gallery/print-and-paper.html",
       label: "Print and Paper",
