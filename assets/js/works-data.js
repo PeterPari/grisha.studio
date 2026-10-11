@@ -1,26 +1,26 @@
 window.WORKS = [
   {
-    title: "Night Talker 1",
-    slug: "night-talker-1",
+    title: "Dream Talker 1",
+    slug: "dream-talker-1",
     num: 26,
     year: 2026,
     gallery: "stone",
     materials: "Stone",
     dimensions: null,
     status: "complete",
-    thumbnail: null,
+    thumbnail: "assets/img/works/dream-talker-1/front-view-web.jpg",
     imgClass: null
   },
   {
-    title: "Night Talker 2",
-    slug: "night-talker-2",
+    title: "Dream Talker 2",
+    slug: "dream-talker-2",
     num: 25,
     year: 2026,
     gallery: "stone",
     materials: "Stone",
     dimensions: null,
     status: "complete",
-    thumbnail: null,
+    thumbnail: "assets/img/works/dream-talker-2/side-view-web.jpg",
     imgClass: null
   },
   {
@@ -32,7 +32,7 @@ window.WORKS = [
     materials: "Stone",
     dimensions: null,
     status: "complete",
-    thumbnail: null,
+    thumbnail: "assets/img/works/reclining-nude/side-view-web.jpg",
     imgClass: null
   },
   {

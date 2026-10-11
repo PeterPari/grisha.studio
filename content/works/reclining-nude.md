@@ -8,9 +8,12 @@ gallery: stone
 materials: "Stone"
 dimensions: null
 status: complete
-thumbnail: null
-primary_image: null
-gallery_images: []
+thumbnail: assets/img/works/reclining-nude/side-view-web.jpg
+primary_image: assets/img/works/reclining-nude/side-view-web.jpg
+gallery_images:
+  - assets/img/works/reclining-nude/side-view-web.jpg
+  - assets/img/works/reclining-nude/second-side-view-web.jpg
+  - assets/img/works/reclining-nude/top-view-web.jpg
 ---
 
 Details coming soon.

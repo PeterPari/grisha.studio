@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="../assets/css/exhibition-detail.css">
     <script>try{if(sessionStorage.getItem('site-loader-seen')==='1')document.documentElement.classList.add('loader-seen')}catch(e){}</script>
     <link rel="stylesheet" href="../assets/css/site-loader.css">
+    <link rel="stylesheet" href="../assets/css/work-zoom.css">
     <script src="../assets/js/site-loader.js" defer></script>
+    <script src="../assets/js/work-zoom.js" defer></script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/favicon.png">
@@ -117,7 +119,7 @@
             <div class="exh-desc-label">About</div>
             <div class="exh-desc-body">
                 <p><em>America, Unfinished?!</em> was a large-scale contemporary art exhibition at the WaterFire Arts Center in Providence, Rhode Island, on view July 2 – August 30, 2026. Staged across the Center's 15,000-square-foot Main Hall, it brought together artists from across the country to explore the complexities, contradictions, and possibilities of the American experience — themes of identity, democracy, belonging, memory, and justice — through immersive installations and large-scale work.</p>
-                <p>Gregory Parizhsky's sculpture was featured among the exhibiting artists. Opening night was July 2, 2026, from 5 to 9 PM.</p>
+                <p>Gregory Parizhsky exhibited three sculptures: <a href="../work/tower-of-babel.html">Tower of Babel</a>, <a href="../work/wishing-well.html">The Wishing Well</a>, and <a href="../work/weathered-huts-of-the-soul.html">The Weathered Huts of the Soul</a>. Opening night was July 2, 2026, from 5 to 9 PM.</p>
                 <p>Full details and the complete artist list are on the <a href="https://waterfire.org/events/america-unfinished/" target="_blank" rel="noopener noreferrer">WaterFire Arts Center event page</a>.</p>
             </div>
         </section>
@@ -129,6 +131,65 @@
             </a>
         </section>
     </div>
+    <section class="exh-gallery" aria-label="Installation photographs">
+        <div class="exh-gallery-header reveal">
+            <span>Installation</span>
+            <span class="exh-gallery-count">04</span>
+        </div>
+        <div class="exh-gallery-grid">
+            <div class="g-img reveal" style="--d:60ms">
+                <a class="image-zoom-link" href="../assets/img/exhibitions/america-unfinished/install-1-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/exhibitions/america-unfinished/install-1-web.jpg" alt="America, Unfinished?! — installation view" width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+            </div>
+            <div class="g-img reveal" style="--d:80ms">
+                <a class="image-zoom-link" href="../assets/img/exhibitions/america-unfinished/install-2-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/exhibitions/america-unfinished/install-2-web.jpg" alt="America, Unfinished?! — installation view" width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+            </div>
+            <div class="g-img reveal" style="--d:100ms">
+                <a class="image-zoom-link" href="../assets/img/exhibitions/america-unfinished/install-3-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/exhibitions/america-unfinished/install-3-web.jpg" alt="America, Unfinished?! — installation view" width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+            </div>
+            <div class="g-img reveal" style="--d:120ms">
+                <a class="image-zoom-link" href="../assets/img/exhibitions/america-unfinished/install-4-web.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/exhibitions/america-unfinished/install-4-web.jpg" alt="America, Unfinished?! — installation view" width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="exh-works" aria-label="Works shown">
+        <div class="exh-works-header reveal">
+            <span>Works Shown</span>
+            <span class="exh-works-count">03</span>
+        </div>
+        <div class="exh-works-grid">
+            <a href="../work/tower-of-babel.html" class="exh-work-card reveal">
+                <div class="exh-work-img">
+                    <img src="../assets/img/works/tower-of-babel/close-up-web.jpg" alt="Tower of Babel by Gregory Parizhsky" width="1066" height="1600" loading="lazy" decoding="async">
+                </div>
+                <span class="exh-work-title">Tower of Babel</span>
+                <span class="exh-work-year">2026 · Ceramic</span>
+            </a>
+            <a href="../work/wishing-well.html" class="exh-work-card reveal" style="--d:60ms">
+                <div class="exh-work-img">
+                    <img src="../assets/img/works/wishing-well/front-view-2-web.jpg" alt="The Wishing Well by Gregory Parizhsky" width="1280" height="1600" loading="lazy" decoding="async">
+                </div>
+                <span class="exh-work-title">The Wishing Well</span>
+                <span class="exh-work-year">2026 · Glazed Stoneware</span>
+            </a>
+            <a href="../work/weathered-huts-of-the-soul.html" class="exh-work-card reveal" style="--d:80ms">
+                <div class="exh-work-img">
+                    <img src="../assets/img/works/weathered-huts-of-the-soul/single-tower-front-view-web.jpg" alt="The Weathered Huts of the Soul by Gregory Parizhsky" width="1021" height="1600" loading="lazy" decoding="async">
+                </div>
+                <span class="exh-work-title">The Weathered Huts of the Soul</span>
+                <span class="exh-work-year">2024 · Concrete, Burnt Wood</span>
+            </a>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-left"><span>Gregory Parizhsky</span><a href="https://www.instagram.com/grisha.studio/" class="footer-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div>
         <span class="footer-meta"><a class="footer-credit" href="https://tech-savvies.com/">Made by Tech-Savvies</a><span>&copy; 2026</span></span>
